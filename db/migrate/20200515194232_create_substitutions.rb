@@ -4,7 +4,8 @@ class CreateSubstitutions < ActiveRecord::Migration[6.0]
       t.integer :original_id
       t.integer :sub_id
       t.string :description
-
+      t.integer :same_quantity, :default => false
+      t.integer :user_id
       t.timestamps
     end
   end
