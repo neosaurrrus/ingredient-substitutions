@@ -34,7 +34,8 @@ ActiveRecord::Schema.define(version: 2020_05_17_193534) do
     t.integer "original_id"
     t.integer "sub_id"
     t.string "description"
-    t.integer "same_quantity", default: 0
+    t.string "issues"
+    t.boolean "same_quantity", default: false
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
