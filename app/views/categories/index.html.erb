@@ -1,8 +1,8 @@
 <h1>All Categories</h1>
 
-<% @categories.each do |c| %>
+<% @categories.each do |category| %>
 <div>
-    <h3><%= c.name %></h3>
-    <%= link_to  "View >>>", categories_show_path(c) %>
+    <h3><%= category.name %></h3>
+    <%= link_to  "View >>>", category %>
 </div>
 <% end %>

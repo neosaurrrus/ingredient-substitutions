@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  get 'substitutions/new'
-  get 'substitutions/edit'
-  get 'substitutions/show'
-  get 'ingredients/show'
-  get 'categories/index'
-  get 'categories/show'
+  resources :categories 
+  resources :ingredients
+  resources :substitutions
+
+
+
   get 'users/signup'
   get 'users/login'
   get 'users/logout'

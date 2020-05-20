@@ -1,2 +1,9 @@
-<h1>Ingredients#show</h1>
-<p>Find me in app/views/ingredients/show.html.erb</p>
+<h1> <%= @ingredient.substitutions.size%> Substitions for <%= @ingredient.name %></h1>
+
+<h2> Substititions </h2>
+
+<% @ingredient.substitutions.each do |s| %>
+    <div>
+        <p> <%= s.description %> </p>
+    </div>
+<% end %>

@@ -1,2 +1,10 @@
-<h1><%></h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<h1><%= @category.name %> Substitutions</h1>
+<% @category.ingredients.each do |i| %>
+    <div>
+        <h3><%= i.name %></h3>
+        <p><%= i.description %></p>
+        <% if i.substitutions.present? %>
+            <%= link_to  "Substitutions", i %>
+        <% end %>
+    </div>
+<% end %>
