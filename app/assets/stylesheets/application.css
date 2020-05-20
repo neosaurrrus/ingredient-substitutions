@@ -13,3 +13,45 @@
  *= require_tree .
  *= require_self
  */
+
+ :root{
+
+    font: normal normal lighter 18px/1.6 Arial, Helvetica, sans-serif;
+
+    --whiteish: hsl(0, 0%, 89%);
+    --lightgrey: hsla(0, 0%, 81%, 1);
+    --darkgrey: hsla(240, 1%, 66%, 1);
+    --blackish: hsla(244, 28%, 21%, 1);
+    --brightblue: hsl(197, 63%, 53%);
+    --red: rgb(222,222,40)
+}
+
+body{
+    background-color: var(--whiteish);
+    color: var(--blackish);
+    margin: 0
+}
+
+nav{
+    background-color: var(--darkgrey);
+    height: 64px;
+    display: grid;
+}
+a {
+    color: var(--brightblue)
+}
+
+.container{
+    max-width: 80%;
+    padding: 64px;
+}
+
+.card-container{
+
+}
+
+.card{
+    background-color: var(--lightgrey);
+    padding: 10px;
+    Max-width: 30%
+}
