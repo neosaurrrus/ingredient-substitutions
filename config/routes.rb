@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
-  resources :sessions
+  resources :sessions, only:[ :new, :edit, :create]
   resources :categories 
   resources :ingredients
   resources :substitutions
   resources :users
+  delete 'logout' => 'sessions#destroy'
+  get 'welcome' => 'application#welcome'
+
+
+
 
 
   
