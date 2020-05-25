@@ -12,7 +12,15 @@
   <body>
     <nav>
     <span>SwapChef</span>
+    <%=current_user.username if current_user%>
+     
+    <span> <%= link_to "Login", controller: "sessions", action: "new"  if !current_user%></span>
+    <span> <%= link_to "Signup", controller: "users", action: "new"  if !current_user%></span>
+    <span> <%= link_to "Logout", logout_path , method:"delete" if current_user%></span>
+    <span> <%= link_to "New Substitution", controller: "substitutions", action: "new" if current_user%></span>
+    
     </nav>
+
     <div class="container">
     <%= yield %>
     </div>
