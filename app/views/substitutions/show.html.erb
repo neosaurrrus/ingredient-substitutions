@@ -4,3 +4,10 @@
 <p><%= @substitution.issues %> </p>
 
 
+<% if @substitution.sub.vegan %>
+     <p><strong>Vegan Substitute!</strong></p>
+     <% elsif @substitution.sub.vegetarian %>
+    <p><strong>Vegetarian Substitute!</strong></p>
+<%end%>
+
+
