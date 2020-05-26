@@ -1,6 +1,14 @@
 <h1>Add a New Substitution</h1>
 
-    <%= form_for @substitution do |s| %>
+    <%= form_with model:@substitution do |s| %>
+
+        <%= s.fields_for :ingredient do |i| %>
+            <h2>Original Ingredient</h2>
+            <%= i.collection_select :ingredient, Ingredient.all, :id, :name %><br>
+            <h2>Substitution Ingredient</h2>
+            <%= i.collection_select :ingredient, Ingredient.all, :id, :name %><br>
+        <% end %>
+    <h2>Substitution Details</h2>
     <%= s.label :same_quantity, "Should you use a 1:1 ratio?"%><br>
     <%= s.check_box :same_quantity %><br>
 
@@ -11,7 +19,17 @@
 
     <%= s.submit "Submit Substitution" %>
 
-<% end %>
+    <% end %>
 
 
+
+
+
+      t.integer :original_id
+      t.integer :sub_id
+      t.string :description
+      t.string :issues
+      t.boolean :same_quantity, :default => false
+      t.integer :user_id
+      t.timestamps
 
