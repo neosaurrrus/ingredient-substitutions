@@ -21,6 +21,8 @@ class SubstitutionsController < ApplicationController
   end
 
   def show
+    @substitution = Substitution.find_by(id:params[:id])
+   
   end
 
   private

@@ -1,3 +1,6 @@
-<h1>Substitutions#show</h1>
-<p>Find me in app/views/substitutions/show.html.erb</p>
+<h1> <%= @substitution.original.name %> can be swapped for <%= @substitution.sub.name %> </h1>
+<h2> Submitted by <%= @substitution.user.username %> on <%=@substitution.created_at.to_date.strftime("%m/%d/%Y")%> </h2>
+<p><%= @substitution.description %> </p>
+<p><%= @substitution.issues %> </p>
+
 
