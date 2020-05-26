@@ -1,2 +1,17 @@
-<h1>Substitutions#new</h1>
-<p>Find me in app/views/substitutions/new.html.erb</p>
+<h1>Add a New Substitution</h1>
+
+    <%= form_for @substitution do |s| %>
+    <%= s.label :same_quantity, "Should you use a 1:1 ratio?"%><br>
+    <%= s.check_box :same_quantity %><br>
+
+    <%= s.label :description, "Provide futher details if needed" %><br>
+    <%= s.text_field :description %><br>
+    <%= s.label :issues, "Any issues to consider?" %><br>
+    <%= s.text_field :issues %><br>
+
+    <%= s.submit "Submit Substitution" %>
+
+<% end %>
+
+
+
