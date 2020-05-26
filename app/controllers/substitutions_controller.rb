@@ -6,7 +6,15 @@ class SubstitutionsController < ApplicationController
   end
 
   def create
-    binding.pry
+
+
+    @substitution = current_user.substitutions.create(substitution_params)
+   binding.pry
+    if @substitution.save 
+      redirect_to @substitution
+    else 
+      redirect_to(controller: 'substitutions', action: 'new')
+    end
   end
 
   def edit
@@ -17,6 +25,6 @@ class SubstitutionsController < ApplicationController
 
   private
     def substitution_params
-      params.require(:substitution).permit(:same_quantity,:description, :issues,:ingredient_attributes => [:original_id, :sub_id])
+      params.require(:substitution).permit(:same_quantity,:description, :issues,:original_id, :sub_id)
     end
 end
