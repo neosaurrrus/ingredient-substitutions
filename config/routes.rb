@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   resources :users
   delete 'logout' => 'sessions#destroy'
   get 'welcome' => 'application#welcome'
-  get '/auth/:provider/callback', :to => 'sessions#create_google'
-  get '/auth/failure', :to => 'sessions#failure_google'
+  root 'application#welcome'
+  get '/auth/google_oauth2/callback', :to => 'users#create_google'
+  get '/auth/failure', :to => 'users#failure_google'
 
 
 

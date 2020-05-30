@@ -10,14 +10,6 @@ class SessionsController < ApplicationController
     redirect_to @user
   end
 
-  def create_google
-    auth_hash = request.env['omniauth.auth']
-    render :text => auth_hash.inspect
-  end
-
-  def failure_google
-  end
-
   def destroy
     if session[:user_id] 
       session.delete :user_id
