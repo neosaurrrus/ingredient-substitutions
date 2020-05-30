@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :users
   delete 'logout' => 'sessions#destroy'
   get 'welcome' => 'application#welcome'
+  match '/auth/:provider/callback', :to => 'sessions#create_google'
+  match '/auth/failure', :to => 'sessions#failure_google'
 
 
 

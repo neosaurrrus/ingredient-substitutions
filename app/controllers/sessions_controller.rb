@@ -10,6 +10,12 @@ class SessionsController < ApplicationController
     redirect_to @user
   end
 
+  def create_google
+  end
+
+  def failure_google
+  end
+
   def destroy
     if session[:user_id] 
       session.delete :user_id
