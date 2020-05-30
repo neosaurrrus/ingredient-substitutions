@@ -1,6 +1,7 @@
 1. Add Omniauth --------- > see blog post
 2. Figure out multiple providrs -
-4.  Add substitution new form
+
+3. work out adding new ingredients.
 
 5. Add Edit and delete options 
 
