@@ -16,12 +16,11 @@ class UsersController < ApplicationController
     render :text => auth_hash.inspect
   end
 
-  def failure_google
-    binding.pry
-  end
 
   def show
+
     @user = User.find_by(id:params[:id])
+
   end
 
     private
