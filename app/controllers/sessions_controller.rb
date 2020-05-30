@@ -11,6 +11,8 @@ class SessionsController < ApplicationController
   end
 
   def create_google
+    auth_hash = request.env['omniauth.auth']
+    render :text => auth_hash.inspect
   end
 
   def failure_google
