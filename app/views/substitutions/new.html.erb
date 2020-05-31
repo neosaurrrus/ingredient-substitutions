@@ -17,7 +17,7 @@
                         <%= i.check_box :vegan_original %>
                         <%= i.label :vegetarian_original %>
                         <%= i.check_box :vegetarian__original %>
-                        <%= s.collection_select :category_id, Category.all, :id, :name, :prompt => 'Select or add a new Category' %>
+                        <%= s.collection_select :category_id_original, Category.all, :id, :name, :prompt => 'Select or add a new Category' %>
                  <% end %><br>
                 
 
@@ -27,14 +27,15 @@
                  <h4> New ingredient</h4>
                 <strong>Ingredient:</strong>
                  <%= s.fields_for :ingredients do |i| %>
-                        <%= i.label :name_subbed %>
-                        <%= i.text_field :name_subbed %>
-                        <%= i.label :description_subbed%>
-                        <%= i.text_field :description_subbed%>
-                        <%= i.label :vegan_subbed %>
-                        <%= i.check_box :vegan_subbed %>
-                        <%= i.label :vegetarian_subbed %>
-                        <%= i.check_box :vegetarian_subbed %>
+                        <%= i.label :name_sub %>
+                        <%= i.text_field :name_sub %>
+                        <%= i.label :description_sub%>
+                        <%= i.text_field :description_sub%>
+                        <%= i.label :vegan_sub %>
+                        <%= i.check_box :vegan_sub %>
+                        <%= i.label :vegetarian_sub %>
+                        <%= i.check_box :vegetarian_sub %>
+                        <%= s.collection_select :category_id_sub, Category.all, :id, :name, :prompt => 'Select or add a new Category' %>
                  <% end %><br>
                
         
