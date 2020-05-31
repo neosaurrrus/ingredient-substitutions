@@ -1,5 +1,3 @@
-1. Add Omniauth --------- > see blog post
-2. Figure out multiple providrs -
 
 3. work out adding new ingredients.
 

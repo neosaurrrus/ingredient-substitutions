@@ -4,9 +4,39 @@
 
         
             <h2>Original Ingredient</h2>
-            <%= s.collection_select :original_id, Ingredient.all, :id, :name %><br>
+            <%= s.collection_select :original_id, Ingredient.all, :id, :name , :prompt => 'Select or add new Ingredient below' %><br>
+
+                <h4> New ingredient</h4>
+                <strong>Ingredient:</strong>
+                 <%= s.fields_for :ingredients do |i| %>
+                        <%= i.label :name_original %>
+                        <%= i.text_field :name_original %>
+                        <%= i.label :description_original %>
+                        <%= i.text_field :description_original %>
+                        <%= i.label :vegan_original %>
+                        <%= i.check_box :vegan_original %>
+                        <%= i.label :vegetarian_original %>
+                        <%= i.check_box :vegetarian__original %>
+                        <%= s.collection_select :category_id, Category.all, :id, :name, :prompt => 'Select or add a new Category' %>
+                 <% end %><br>
+                
+
+
             <h2>Substitution Ingredient</h2>
-            <%= s.collection_select :sub_id, Ingredient.all, :id, :name %><br>
+            <%= s.collection_select :sub_id, Ingredient.all, :id, :name, :prompt => 'Select or add new Ingredient below'%><br>
+                 <h4> New ingredient</h4>
+                <strong>Ingredient:</strong>
+                 <%= s.fields_for :ingredients do |i| %>
+                        <%= i.label :name_subbed %>
+                        <%= i.text_field :name_subbed %>
+                        <%= i.label :description_subbed%>
+                        <%= i.text_field :description_subbed%>
+                        <%= i.label :vegan_subbed %>
+                        <%= i.check_box :vegan_subbed %>
+                        <%= i.label :vegetarian_subbed %>
+                        <%= i.check_box :vegetarian_subbed %>
+                 <% end %><br>
+               
         
     <h2>Substitution Details</h2>
     <%= s.label :same_quantity, "Should you use a 1:1 ratio?"%><br>
@@ -23,13 +53,4 @@
 
 
 
-
-
-      t.integer :original_id
-      t.integer :sub_id
-      t.string :description
-      t.string :issues
-      t.boolean :same_quantity, :default => false
-      t.integer :user_id
-      t.timestamps
 
