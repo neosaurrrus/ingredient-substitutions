@@ -62,5 +62,5 @@ Rails.application.configure do
 
 
   # strong parameters
-  config.action_controller.action_on_unpermitted_parameters = :raise
+
 end

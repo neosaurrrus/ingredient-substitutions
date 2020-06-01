@@ -9,6 +9,7 @@
                 <h4> New ingredient</h4>
                 <strong>Ingredient:</strong>
                  <%= s.fields_for :ingredient_original do |i| %>
+                        <%= i.hidden_field :user_id, :value => current_user.id %>
                         <%= i.label :name %>
                         <%= i.text_field :name %>
                         <%= i.label :description %>
@@ -27,6 +28,7 @@
                  <h4> New ingredient</h4>
                 <strong>Ingredient:</strong>
                  <%= s.fields_for :ingredient_sub do |i| %>
+                           <%= i.hidden_field :user_id, :value => current_user.id %>
                         <%= i.label :name %>
                         <%= i.text_field :name %>
                         <%= i.label :description%>
@@ -40,6 +42,7 @@
                
         
     <h2>Substitution Details</h2>
+    <%= s.hidden_field :user_id, :value => current_user.id %>
     <%= s.label :same_quantity, "Should you use a 1:1 ratio?"%><br>
     <%= s.check_box :same_quantity %><br>
 
