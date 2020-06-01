@@ -8,16 +8,16 @@
 
                 <h4> New ingredient</h4>
                 <strong>Ingredient:</strong>
-                 <%= s.fields_for :ingredients do |i| %>
-                        <%= i.label :name_original %>
-                        <%= i.text_field :name_original %>
-                        <%= i.label :description_original %>
-                        <%= i.text_field :description_original %>
-                        <%= i.label :vegan_original %>
-                        <%= i.check_box :vegan_original %>
-                        <%= i.label :vegetarian_original %>
-                        <%= i.check_box :vegetarian__original %>
-                        <%= s.collection_select :category_id_original, Category.all, :id, :name, :prompt => 'Select or add a new Category' %>
+                 <%= s.fields_for :ingredient_original do |i| %>
+                        <%= i.label :name %>
+                        <%= i.text_field :name %>
+                        <%= i.label :description %>
+                        <%= i.text_field :description %>
+                        <%= i.label :vegan %>
+                        <%= i.check_box :vegan %>
+                        <%= i.label :vegetarian %>
+                        <%= i.check_box :vegetarian %>
+                        <%= i.collection_select :category_id, Category.all, :id, :name, :prompt => 'Select or add a new Category' %>
                  <% end %><br>
                 
 
@@ -26,16 +26,16 @@
             <%= s.collection_select :sub_id, Ingredient.all, :id, :name, :prompt => 'Select or add new Ingredient below'%><br>
                  <h4> New ingredient</h4>
                 <strong>Ingredient:</strong>
-                 <%= s.fields_for :ingredients do |i| %>
-                        <%= i.label :name_sub %>
-                        <%= i.text_field :name_sub %>
-                        <%= i.label :description_sub%>
-                        <%= i.text_field :description_sub%>
-                        <%= i.label :vegan_sub %>
-                        <%= i.check_box :vegan_sub %>
-                        <%= i.label :vegetarian_sub %>
-                        <%= i.check_box :vegetarian_sub %>
-                        <%= s.collection_select :category_id_sub, Category.all, :id, :name, :prompt => 'Select or add a new Category' %>
+                 <%= s.fields_for :ingredient_sub do |i| %>
+                        <%= i.label :name %>
+                        <%= i.text_field :name %>
+                        <%= i.label :description%>
+                        <%= i.text_field :description%>
+                        <%= i.label :vegan %>
+                        <%= i.check_box :vegan %>
+                        <%= i.label :vegetarian %>
+                        <%= i.check_box :vegetarian %>
+                        <%= i.collection_select :category_id, Category.all, :id, :name, :prompt => 'Select or add a new Category' %>
                  <% end %><br>
                
         

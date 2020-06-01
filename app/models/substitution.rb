@@ -1,4 +1,5 @@
 class Substitution < ApplicationRecord
+    
     belongs_to :original, :class_name => :Ingredient
     belongs_to :sub, :class_name => :Ingredient
     belongs_to :user
@@ -18,5 +19,8 @@ class Substitution < ApplicationRecord
 
     def user
         User.find(self.user_id)
+    end
+
+    def ingredient
     end
 end
