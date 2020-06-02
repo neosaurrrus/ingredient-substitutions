@@ -1,14 +1,7 @@
-<h1><%= @user.username %>'s Profile</h1>
-<em>Joined the site <%=@user.created_at.to_date.strftime("on %m/%d/%Y")%></em>
 
-    <% if !@user.substitutions.present? %>
-        <p>No substitutions submitted.</p>
-    <% else %>
-        <h3><%= @user.substitutions.size %> substitutions submitted:</h3>
-    
- 
-    <div class="card-container">
-           <% @user.substitutions.each do |s| %>
+
+<div class="card-container">
+        
    
             <div class="card">
                 <div class="card-info">
@@ -41,6 +34,5 @@
             </div>
             <br>
         
-        <% end %>
-    </div>
-    <% end %>
+            <% end %>
+ </div>
