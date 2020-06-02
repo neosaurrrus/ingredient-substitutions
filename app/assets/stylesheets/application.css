@@ -13,33 +13,85 @@
  *= require_tree .
  *= require_self
  */
+ @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
  :root{
-
-    font: normal normal lighter 18px/1.6 Arial, Helvetica, sans-serif;
-
+    
     --whiteish: hsl(0, 0%, 89%);
     --lightgrey: hsla(0, 0%, 81%, 1);
     --darkgrey: hsla(240, 1%, 66%, 1);
     --blackish: hsla(244, 28%, 21%, 1);
-    --brightblue: hsl(197, 63%, 53%);
-    --red: rgb(222,222,40)
+    --megadarkgrey: hsl(0, 0%, 22%);
+    --coralred: rgb(209, 80, 70);
+    --darkred: rgb(148, 56, 49);
+}
+
+html {
+    font: normal normal lighter 18px/1.6 'Open Sans', Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
 
 body{
     background-color: var(--whiteish);
     color: var(--blackish);
-    margin: 0
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
 }
 
 nav{
     background-color: var(--darkgrey);
-    height: 64px;
+    padding: 10px;
+}
+
+nav ul{
+    list-style: none;
     display: grid;
+    grid-template-columns: 1fr repeat(4, 150px);
+    font-size: 1.2rem;
 }
+
+.logo{
+    font-size: 2rem;
+    text-decoration: none;
+
+}
+
 a {
-    color: var(--brightblue)
+    position: relative;
+    text-decoration: none;
+    color: var(--coralred);
 }
+
+a:visited {
+    color: var(--darkred);
+}
+
+a::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    right: 0px;
+    bottom: -3px;
+    left: 0px;
+    background: var(--coralred);  
+    opacity: 0.4;
+}
+
+a:hover {
+    color: var(--coralred);
+    transition: all 0.3s;
+}
+a:hover::before {
+    background: var(--coralred);  
+    opacity: 0.9;    
+    transition: all 0.3s;         
+}
+
 
 .container{
     max-width: 80%;
