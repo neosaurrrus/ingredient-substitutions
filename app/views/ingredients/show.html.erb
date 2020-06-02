@@ -13,6 +13,7 @@
 
 
     <% @ingredient.substitutions.each do |s| %>
+    <div class="card-container">
         <div class="card">
             <h3><%= s.original_ingredient.name %> to <%= s.sub_ingredient.name%></h3>
             <em> Submitted by <%= s.user.username %> <%= s.created_at.to_date.strftime("on %m/%d/%Y") %> </em>
@@ -28,7 +29,8 @@
 
         <h3> Remember to add User controls </h3>
         </div>
-        <br>
+        
+    </div>
     <% end %>
 
 <% end %>

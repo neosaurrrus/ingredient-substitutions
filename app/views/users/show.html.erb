@@ -5,26 +5,35 @@
 
         <p>No substitutions submitted.</p>
     <% else %>
+    <div class="card-container">
         <% @user.substitutions.each do |s| %>
+   
             <div class="card">
-                <h3><%= s.original_ingredient.name %> to <%= s.sub_ingredient.name%></h3>
-                <em> Submitted by <%= s.user.username %> <%= s.created_at.to_date.strftime("on %m/%d/%Y") %> </em>
-                
-                <% if s.sub_ingredient.vegan %>
-                    <p><strong>Vegan Substitute</strong></p>
-                <% elsif s.sub_ingredient.vegetarian %>
-                    <p><strong>Vegetarian Substitute</strong></p>
-                <%end%>
+                <div class="card-info">
+                    <h3><%= link_to s.original_ingredient.name, s.original_ingredient %></h3>
+                    <em> can be substituted with... </em>
+                    <h3> <%= link_to s.sub_ingredient.name, s.sub_ingredient %> </h3>
+                    <em> Submitted by <%= s.user.username %> <%= s.created_at.to_date.strftime("on %d/%m/%Y") %> </em>
+                    
+                    <% if s.sub_ingredient.vegan %>
+                        <p><strong>Vegan Substitute</strong></p>
+                    <% elsif s.sub_ingredient.vegetarian %>
+                        <p><strong>Vegetarian Substitute</strong></p>
+                    <%end%>
 
-                <p><%= s.description %></p>
-                <p><%= s.issues %></p>
-                <br>
+                    <p><%= s.description %></p>
+                    <p><%= s.issues %></p>
+                </div>
                 <% if @user == current_user %>
-                <%= link_to "edit substitution", controller:"substitutions", action:"edit" %>
-                <br>
-                <%= link_to "delete substitution", controller:"substitutions", action:"destroy", method:"delete" %>
-                <% end %>
+                <div class="card-controls">
+                    <%= link_to "edit", controller:"substitutions", action:"edit" %>
+                    <br>
+                    <%= link_to "delete", controller:"substitutions", action:"destroy", method:"delete" %>
+                    <% end %>
+                </div>
             </div>
             <br>
+        
         <% end %>
+    </div>
     <% end %>
