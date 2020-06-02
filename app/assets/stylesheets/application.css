@@ -132,6 +132,9 @@ a:hover::before {
 .card-controls{
     padding-top: 10px;
     text-align: center;
-    vertical-align: bottom;
-    
+    vertical-align: bottom;   
+}
+
+.form-section{
+    padding:20px;
 }

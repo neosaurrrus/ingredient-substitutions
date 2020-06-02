@@ -1,5 +1,5 @@
 <h1><%= @category.name %> Substitutions</h1>
-<% @category.ingredients.each do |i| %>
+<% @category.ingredients.sort_by{|i| i.name}.each do |i| %>
     <div>
         <% if i.substitutions.present? %>
             <h3><%= link_to  i.name, i %></h3>
@@ -11,5 +11,5 @@
         <p><%= i.description %></p>
        
     </div>
-    <br>
+    
 <% end %>

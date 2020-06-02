@@ -19,8 +19,7 @@
                  <%= link_to current_user.username, controller: "users", action: "show", id: current_user.id %> 
                <% else %> 
                   <%=link_to "Signup / Login", controller: "sessions", action: "new" %>
-               <% end %>
-            
+               <% end %>   
         </li>
       </ul>
     </nav>
