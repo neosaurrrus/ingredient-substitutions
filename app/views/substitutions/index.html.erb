@@ -1,8 +1,7 @@
 
-
+<h1> Last 5 Substitutions </h1>
 <div class="card-container">
-     <% @last_5_substitutions.each |s| do>   
-   
+     <% @last_5_substitutions.each do |s|  %>   
             <div class="card">
                 <div class="card-info">
                     <h3><%= link_to s.original_ingredient.name, s.original_ingredient %></h3>

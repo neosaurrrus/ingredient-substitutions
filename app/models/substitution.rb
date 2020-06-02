@@ -1,5 +1,5 @@
 class Substitution < ApplicationRecord
-   scope :last_5, order(created_at: :desc).limit(5)
+    scope :last_5, -> { order(created_at: :desc).limit(5) }
 
     belongs_to :original, :class_name => :Ingredient
     belongs_to :sub, :class_name => :Ingredient
