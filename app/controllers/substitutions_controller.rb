@@ -1,5 +1,8 @@
 class SubstitutionsController < ApplicationController
 
+  def index
+    @last_5_substitutions = Substitution.last_5
+  end
   def new
     require_logged_in
     @substitution = Substitution.new
