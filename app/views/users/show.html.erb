@@ -2,9 +2,10 @@
 <em>Joined the site <%=@user.created_at.to_date.strftime("on %m/%d/%Y")%></em>
 
     <% if !@user.substitutions.present? %>
-
         <p>No substitutions submitted.</p>
     <% else %>
+        <h3><%= @user.substitutions.size %> substitutions submitted:</h3>
+    
     <div class="card-container">
         <% @user.substitutions.each do |s| %>
    
@@ -13,7 +14,12 @@
                     <h3><%= link_to s.original_ingredient.name, s.original_ingredient %></h3>
                     <em> can be substituted with... </em>
                     <h3> <%= link_to s.sub_ingredient.name, s.sub_ingredient %> </h3>
-                    <em> Submitted by <%= s.user.username %> <%= s.created_at.to_date.strftime("on %d/%m/%Y") %> </em>
+                    <% if s.user == current_user %>
+                        <em> Submitted 
+                    <% else %>
+                    <em> Submitted by <%= s.user.username %> 
+                    <% end %>
+                    <%= s.created_at.to_date.strftime("on %d/%m/%Y") %> </em>
                     
                     <% if s.sub_ingredient.vegan %>
                         <p><strong>Vegan Substitute</strong></p>
