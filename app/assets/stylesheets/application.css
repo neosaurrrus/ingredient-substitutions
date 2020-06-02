@@ -20,6 +20,7 @@
     --whiteish: hsl(0, 0%, 89%);
     --lightgrey: hsla(0, 0%, 81%, 1);
     --darkgrey: hsla(240, 1%, 66%, 1);
+    --navgrey: hsla(240, 1%, 66%, 0.3);
     --blackish: hsla(244, 28%, 21%, 1);
     --megadarkgrey: hsl(0, 0%, 22%);
     --coralred: rgb(209, 80, 70);
@@ -32,7 +33,9 @@ html {
 }
 
 body{
-    background-color: var(--whiteish);
+    
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     color: var(--blackish);
     margin: 0;
     padding: 0;
@@ -44,7 +47,7 @@ body{
 }
 
 nav{
-    background-color: var(--darkgrey);
+    background-color: var(--navgrey);
     padding: 10px;
 }
 

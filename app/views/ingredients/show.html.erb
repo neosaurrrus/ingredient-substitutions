@@ -1,22 +1,34 @@
-<h1> <%= @ingredient.substitutions.size%> Substitions for <%= @ingredient.name %></h1>
+
+<h1> <%= @ingredient.name %> </h1>
+<p> <%= @ingredient.description %> </p>
+
+<% if !@ingredient.substitutions.present? %>
+
+    <em>No Substitutions available, why not <%= link_to "add one?", controller:"substitutions", action: "new" %></em>
+
+<% else %>
+
+<strong><%= @ingredient.substitutions.size%> substitutions found: </strong>
 
 
 
-<% @ingredient.substitutions.each do |s| %>
-    <div class="card">
-        <h3><%= s.original_ingredient.name %> to <%= s.sub_ingredient.name%></h3>
-        <em> Submitted by <%= s.user.username %> <%= s.created_at.to_date.strftime("on %m/%d/%Y") %> </em>
-        
-        <% if s.sub_ingredient.vegan %>
-            <p><strong>Vegan Substitute!</strong></p>
-        <% elsif s.sub_ingredient.vegetarian %>
-            <p><strong>Vegetarian Substitute!</strong></p>
-        <%end%>
+    <% @ingredient.substitutions.each do |s| %>
+        <div class="card">
+            <h3><%= s.original_ingredient.name %> to <%= s.sub_ingredient.name%></h3>
+            <em> Submitted by <%= s.user.username %> <%= s.created_at.to_date.strftime("on %m/%d/%Y") %> </em>
+            
+            <% if s.sub_ingredient.vegan %>
+                <p><strong>Vegan Substitute!</strong></p>
+            <% elsif s.sub_ingredient.vegetarian %>
+                <p><strong>Vegetarian Substitute!</strong></p>
+            <%end%>
 
-        <p><%= s.description %></p>
-        <p><%= s.issues %></p>
+            <p><%= s.description %></p>
+            <p><%= s.issues %></p>
 
-     <h3> Remember to add User controls </h3>
-    </div>
-    <br>
+        <h3> Remember to add User controls </h3>
+        </div>
+        <br>
+    <% end %>
+
 <% end %>
