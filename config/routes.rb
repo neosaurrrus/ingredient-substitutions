@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :categories 
   resources :ingredients
   resources :substitutions
-  resources :users, only:[:new, :show]
+  resources :users, only:[:new, :show, :create]
   delete 'logout' => 'sessions#destroy'
 
   get '/auth/google_oauth2/callback', :to => 'sessions#create'

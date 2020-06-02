@@ -1,7 +1,10 @@
+
+<%= form_with model:@user do |f| %>
 <h1>Sign Up for a SwapChef account or login via <%= link_to "Google ", root_url + "auth/google_oauth2"%></h1>
 <strong>Joining allows you to contribute your own substitutions and provide other chefs with your own ideas!</strong>
-<%= form_for @user, controller: 'users', action: 'create' do |f| %>
-  Username: <%= f.text_field :username %><br>
-  Password: <%= f.password_field :password %><br>
+  <p>Username: <%= f.text_field :username %></p>
+  <p>Password: <%= f.password_field :password %></p>
+  <p>Confirm Password: <%= f.password_field :password_confirmation %></p>
+  
   <%= f.submit "Create User" %>
 <% end %>
