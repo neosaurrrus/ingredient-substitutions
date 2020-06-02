@@ -58,3 +58,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'dotenv-rails'
+
+#updates to deal with vulnerabilities
+gem "actionpack", ">= 6.0.3.1"
+gem "activesupport", ">= 6.0.3.1"
+gem "activestorage", ">= 6.0.3.1"
