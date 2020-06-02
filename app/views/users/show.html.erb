@@ -1,5 +1,6 @@
 <h1><%= @user.username %>'s Profile</h1>
-<h2>Joined the site <%=@user.created_at.to_date.strftime("on %m/%d/%Y")%></h2>
+<em>Joined the site <%=@user.created_at.to_date.strftime("on %m/%d/%Y")%></em>
+
     <% if !@user.substitutions.present? %>
 
         <p>No substitutions submitted.</p>
@@ -10,15 +11,20 @@
                 <em> Submitted by <%= s.user.username %> <%= s.created_at.to_date.strftime("on %m/%d/%Y") %> </em>
                 
                 <% if s.sub_ingredient.vegan %>
-                    <p><strong>Vegan Substitute!</strong></p>
+                    <p><strong>Vegan Substitute</strong></p>
                 <% elsif s.sub_ingredient.vegetarian %>
-                    <p><strong>Vegetarian Substitute!</strong></p>
+                    <p><strong>Vegetarian Substitute</strong></p>
                 <%end%>
 
                 <p><%= s.description %></p>
                 <p><%= s.issues %></p>
-
-            <h3> Remember to add User controls </h3>
+                <br>
+                <% if @user == current_user %>
+                <%= link_to "edit substitution", controller:"substitutions", action:"edit" %>
+                <br>
+                <%= link_to "delete substitution", controller:"substitutions", action:"destroy", method:"delete" %>
+                <% end %>
             </div>
+            <br>
         <% end %>
     <% end %>

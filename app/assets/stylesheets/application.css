@@ -102,11 +102,11 @@ a:hover::before {
 }
 
 .card-container{
-
+ display: flex
 }
 
 .card{
-    background-color: var(--lightgrey);
+    background-color: var(--navgrey);
     padding: 10px;
     Max-width: 30%
 }

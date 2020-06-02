@@ -9,18 +9,9 @@ class UsersController < ApplicationController
     session[:user_id] = @user.id
     redirect_to @user
   end
-   
-  def create_google
-    binding.pry
-    auth_hash = request.env['omniauth.auth']
-    render :text => auth_hash.inspect
-  end
-
 
   def show
-
     @user = User.find_by(id:params[:id])
-
   end
 
     private

@@ -15,12 +15,12 @@
         <li class="logo"> <%= link_to "SwapChef", controller: "application", action: "welcome" %></li>
         <li> <%= link_to "New Substitution", controller: "substitutions", action: "new" if current_user%></li>
         <li> <%= link_to "Logout", logout_path , method:"delete" if current_user%></li>
-         <li><%= if current_user 
-                current_user.username 
-                else 
-                  link_to "Signup / Login", controller: "sessions", action: "new"
-                end
-            %>
+         <li><% if current_user %>
+                 <%= link_to current_user.username, controller: "users", action: "show", id: current_user.id %> 
+               <% else %> 
+                  <%=link_to "Signup / Login", controller: "sessions", action: "new" %>
+               <% end %>
+            
         </li>
       </ul>
     </nav>
