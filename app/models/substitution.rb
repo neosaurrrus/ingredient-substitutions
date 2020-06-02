@@ -1,5 +1,10 @@
 class Substitution < ApplicationRecord
+    #scopes
     scope :last_5, -> { order(created_at: :desc).limit(5) }
+    #validations
+    validates :original_id, :sub_id, :description, presence: true
+
+    #associations
 
     belongs_to :original, :class_name => :Ingredient
     belongs_to :sub, :class_name => :Ingredient
