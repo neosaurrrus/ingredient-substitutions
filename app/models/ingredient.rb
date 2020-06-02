@@ -1,7 +1,8 @@
 class Ingredient < ApplicationRecord
     validates :name, length: { minimum: 3}
     validates :description, length: { minimum: 10}
-    
+    validates :category, presence: true
+
 
 
     has_many(:substitutions, :foreign_key => :original_id, :dependent => :destroy)
