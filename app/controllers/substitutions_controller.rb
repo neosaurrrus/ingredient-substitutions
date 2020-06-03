@@ -57,7 +57,7 @@ class SubstitutionsController < ApplicationController
   def destroy
     @substitution = Substitution.find_by(id:params[:id])
     @substitution.destroy
-    redirect_to(controller: 'application', action: 'welcome')
+    redirect_to user_path(current_user)
   end
 
 
