@@ -42,6 +42,19 @@ class SubstitutionsController < ApplicationController
 
   def edit
     require_logged_in
+    @attraction = Substitution.find_by(id: params[:id])
+
+    if @substitution.save 
+      redirect_to @substitution
+    else 
+      render :new
+    end
+  end
+
+  def update
+    @attraction = Substitution.find_by(id: params[:id])
+    @attraction.update
+
   end
 
   def show
