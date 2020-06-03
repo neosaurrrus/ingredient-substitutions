@@ -19,11 +19,11 @@
         <p><%= s.description %></p>
         <p><%= s.issues %></p>
     </div>
-    <% if @user == current_user %>
+    <% if current_user %>
     <div class="card-controls">
-        <%= link_to "edit", controller:"substitutions", action:"edit" %>
+        <%= link_to "edit", edit_substitution_path(s) %>
         <br>
-        <%= link_to "delete", controller:"substitutions", action:"destroy", method:"delete" %>
+        <%= link_to "delete", substitution_path(s), method: :delete %>
         <% end %>
     </div>
 </div>

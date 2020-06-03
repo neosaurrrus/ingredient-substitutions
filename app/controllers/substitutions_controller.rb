@@ -24,7 +24,6 @@ class SubstitutionsController < ApplicationController
       params[:substitution][:sub_id] = @new_sub_ingredient.id
     end
     
-
     params[:substitution] = params[:substitution].except(:ingredient_original).except(:ingredient_sub)
     @substitution = current_user.substitutions.create(params.require(:substitution).permit(:same_quantity,:description, :issues, :original_id, :sub_id, :user_id))
 
@@ -36,31 +35,32 @@ class SubstitutionsController < ApplicationController
 
   end
 
-
-
-
-
   def edit
     require_logged_in
     @attraction = Substitution.find_by(id: params[:id])
-
-    if @substitution.save 
-      redirect_to @substitution
-    else 
-      render :new
-    end
   end
 
   def update
     @attraction = Substitution.find_by(id: params[:id])
-    @attraction.update
+    if @attraction.update(params.require(:substitution).permit(:same_quantity,:description, :issues, :original_id, :sub_id, :user_id)) 
+      redirect_to @substitution
+    else 
+      render :new
+    end
 
   end
 
   def show
     @substitution = Substitution.find_by(id:params[:id])
-   
   end
+
+  def destroy
+    @substitution = Substitution.find_by(id:params[:id])
+    @substitution.destroy
+    redirect_to(controller: 'application', action: 'welcome')
+  end
+
+
 
   private
     # def substitution_params

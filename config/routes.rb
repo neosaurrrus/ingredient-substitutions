@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'welcome' => 'application#welcome'
   root 'application#welcome'
 
-  resources :sessions, only:[ :new, :edit, :create, :delete]
+  resources :sessions
   resources :categories 
   resources :ingredients
   resources :substitutions
