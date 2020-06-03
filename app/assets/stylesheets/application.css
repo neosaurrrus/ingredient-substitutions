@@ -142,9 +142,11 @@ a:hover::before {
 
 .field_with_errors {
     display: table;
-    border: 2px red solid;
+    border: 2px var(--coralred) solid;
+    color: var(--coralred);
+
   }
 
 .error-text{
-    color: var(--coralred)
+    color: var(--coralred);
 }
