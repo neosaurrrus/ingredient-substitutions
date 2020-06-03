@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   get 'welcome' => 'application#welcome'
   root 'application#welcome'
 
-  resources :sessions, only:[ :new, :edit, :create]
+  resources :sessions, only:[ :new, :edit, :create, :delete]
   resources :categories 
   resources :ingredients
   resources :substitutions
-  resources :users, only:[:new, :show, :create]
+  resources :users, only:[:new, :show, :create, :edit]
   delete 'logout' => 'sessions#destroy'
 
   get '/auth/google_oauth2/callback', :to => 'sessions#create'
