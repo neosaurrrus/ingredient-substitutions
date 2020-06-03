@@ -1,5 +1,20 @@
 <h1>Add a New Substitution</h1>
 
+<% if @substitution.errors.any? %>
+  <div id="error_explanation">
+    <h3 class="error-text">
+      <%= pluralize(@substitution.errors.count, "error") %>
+      prohibited your substitution from being created:
+    </h3>
+ 
+    <ul>
+    <% @substitution.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
     <%= form_with model:@substitution do |s| %>
 
        <div class="form-section">

@@ -31,9 +31,14 @@ class SubstitutionsController < ApplicationController
     if @substitution.save 
       redirect_to @substitution
     else 
-      redirect_to(controller: 'substitutions', action: 'new')
+      render :new
     end
+
   end
+
+
+
+
 
   def edit
   end
