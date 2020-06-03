@@ -2,7 +2,8 @@ class Substitution < ApplicationRecord
     #scopes
     scope :last_5, -> { order(created_at: :desc).limit(5) }
     #validations
-    validates :original_id, :sub_id, :description, presence: true
+    validates :original_id, :sub_id, presence: true
+   
 
     #associations
 

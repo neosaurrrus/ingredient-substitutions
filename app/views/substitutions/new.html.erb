@@ -20,7 +20,7 @@
        <div class="form-section">
             <h2>Existing Original Ingredient</h2>
             <em>What are you swapping out?</em>
-            <%= s.collection_select :original_id, Ingredient.all, :id, :name , :prompt => 'Select or add new Ingredient below' %><br>
+            <%= s.collection_select :original_id, Ingredient.ordered_by_name, :id, :name , :prompt => 'Select or add new Ingredient below' %><br>
 
                 <h4> New original ingredient</h4>
                 <strong>Ingredient:</strong>
@@ -34,7 +34,7 @@
                         <%= i.check_box :vegan %>
                         <%= i.label :vegetarian %>
                         <%= i.check_box :vegetarian %>
-                        <%= i.collection_select :category_id, Category.all, :id, :name, :prompt => 'Select or add a new Category' %>
+                        <%= i.collection_select :category_id, Category.ordered_by_name, :id, :name, :prompt => 'Select or add a new Category' %>
                  <% end %>
        </div>
                 
@@ -42,7 +42,7 @@
            <div class="form-section">
             <h2>Substitution Ingredient</h2>
             <em>What are you swapping in?</em>
-            <%= s.collection_select :sub_id, Ingredient.all, :id, :name, :prompt => 'Select or add new Ingredient below'%><br>
+            <%= s.collection_select :sub_id, Ingredient.ordered_by_name, :id, :name, :prompt => 'Select or add new Ingredient below'%><br>
                  <h4> New substitution ingredient</h4>
                 <strong>Ingredient:</strong>
                  <%= s.fields_for :ingredient_sub do |i| %>
@@ -55,7 +55,7 @@
                         <%= i.check_box :vegan %>
                         <%= i.label :vegetarian %>
                         <%= i.check_box :vegetarian %>
-                        <%= i.collection_select :category_id, Category.all, :id, :name, :prompt => 'Select or add a new Category' %>
+                        <%= i.collection_select :category_id, Category.ordered_by_name, :id, :name, :prompt => 'Select or add a new Category' %>
                  <% end %><br>
        </div>
 

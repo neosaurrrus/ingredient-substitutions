@@ -9,7 +9,7 @@ class SubstitutionsController < ApplicationController
   end
 
   def create
-    
+    require_logged_in
     original_id = params[:substitution][:original_id].present?
     sub_id = params[:substitution][:sub_id].present?
     substitution_params = params[:substitution]
@@ -41,6 +41,7 @@ class SubstitutionsController < ApplicationController
 
 
   def edit
+    require_logged_in
   end
 
   def show

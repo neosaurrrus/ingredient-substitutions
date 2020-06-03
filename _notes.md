@@ -9,10 +9,13 @@ Add more to models!
 
 
 Your application must be, within reason, a DRY (Do-Not-Repeat-Yourself) rails app.
-• Logic present in your controllers should be encapsulated as methods in your models.
+
 • Your views should use helper methods and partials when appropriate.
 • Follow patterns in the Rails Style Guide and the Ruby Style Guide.
 
 
+• Logic present in your controllers should be encapsulated as methods in your models.
+
+- NEw edit forms
 
 EDIT and DESTROY Subs
