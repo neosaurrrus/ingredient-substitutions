@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   root 'application#welcome'
 
   resources :sessions
-  resources :categories  do
+  resources :categories  
     resources :ingredients
-  end
+  
   resources :substitutions
   resources :users, only:[:new, :show, :create, :edit]
   delete 'logout' => 'sessions#destroy'
