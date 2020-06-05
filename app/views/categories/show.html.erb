@@ -1,8 +1,8 @@
-<h1><%= @category.name %> Substitutions</h1>
+<h1><%= @category.name %> Ingredients</h1>
 <% @category.ingredients.sort_by{|i| i.name}.each do |i| %>
     <div>
         <% if i.substitutions.present? %>
-            <h3><%= link_to  i.name, i %></h3>
+            <h3><%= link_to  i.name, category_ingredient_path(i) %></h3>
             <em><%= i.substitutions.size %> substitution(s) listed.</em>
         <% else %>
             <h3> <%= i.name %> </h3>

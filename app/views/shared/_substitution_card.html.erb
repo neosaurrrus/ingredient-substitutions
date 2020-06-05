@@ -1,8 +1,8 @@
 <div class="card">
     <div class="card-info">
-        <h3><%= link_to s.original_ingredient.name, s.original_ingredient %></h3>
+        <h3><%= link_to s.original_ingredient.name, category_ingredient_url(s.original_ingredient.category,s.original_ingredient.id) %></h3>
         <em> can be substituted with... </em>
-        <h3> <%= link_to s.sub_ingredient.name, s.sub_ingredient %> </h3>
+        <h3> <%= link_to s.sub_ingredient.name, category_ingredient_url(s.sub_ingredient.category, s.sub_ingredient.id) %> </h3>
         <% if s.user == current_user %>
             <em> Submitted 
         <% else %>

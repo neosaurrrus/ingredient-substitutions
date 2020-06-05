@@ -72,4 +72,6 @@ class SubstitutionsController < ApplicationController
     # def ingredient_sub_params
     #   substitution_params.require(:ingredient_sub).permit(:name, :description, :vegan, :vegetarian, :category_id, :user_id)
     # end
+
+  
 end
