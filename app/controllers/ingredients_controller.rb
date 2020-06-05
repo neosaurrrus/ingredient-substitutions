@@ -6,6 +6,9 @@ class IngredientsController < ApplicationController
   end
 
   def create
+    @ingredient = Ingredient.new(ingredient_params)
+    @ingredient.save
+    redirect_to @ingredient
   end
 
   def show
@@ -14,7 +17,7 @@ class IngredientsController < ApplicationController
 
   private
 
-  def post_params
+  def ingredient_params
     params.require(:ingredient).permit(:name, :description, :category_id, :vegan, :vegetarian)
   end
 
