@@ -1,0 +1,14 @@
+<h1> Create ingredient</h1>
+  
+    <%= s.form_for @ingredient do |i| %>
+        <%= i.hidden_field :user_id, :value => current_user.id %>
+         <%= f.hidden_field :category_id %>
+        <%= i.label :name %>
+        <%= i.text_field :name %>
+        <%= i.label :description %>
+        <%= i.text_area :description %>
+        <%= i.label :vegan %>
+        <%= i.check_box :vegan %>
+        <%= i.label :vegetarian %>
+        <%= i.check_box :vegetarian %>
+    <% end %>

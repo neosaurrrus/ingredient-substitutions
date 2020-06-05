@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   root 'application#welcome'
 
   resources :sessions
-  resources :categories  
+  resources :categories  do
     resources :ingredients
+  end
   
   resources :substitutions
   resources :users, only:[:new, :show, :create, :edit]
