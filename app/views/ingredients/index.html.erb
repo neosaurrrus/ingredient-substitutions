@@ -1,0 +1,15 @@
+<h1><%= @category.name %> Ingredients</h1>
+<% @category.ingredients.sort_by{|i| i.name}.each do |i| %>
+    <div>
+        <% if i.substitutions.present? %>
+            <h3><%= link_to i.name, i %></h3>
+            <em><%= i.substitutions.size %> substitution(s) listed.</em>
+        <% else %>
+            <h3> <%= i.name %> </h3>
+            <em>No Substitutions available, why not <%= link_to "add one?", controller:"substitutions", action: "new" %></em>
+        <% end %>
+        <p><%= i.description %></p>
+       
+    </div>
+    
+<% end %>
