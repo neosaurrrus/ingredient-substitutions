@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
     end
 
     session[:user_id] = @user.id 
-    redirect_to user_path(@user), notice: "You have sucessfully logged on"
+    redirect_to user_url(@user), notice: "You have sucessfully logged on"
   end
 
   def destroy
