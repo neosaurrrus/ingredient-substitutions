@@ -1,16 +1,25 @@
 <h1><%= @category.name %> Ingredients</h1>
 <em><%=link_to "Add", new_category_ingredient_path(@category.id)%> a new ingredient</em>
 <% @category.ingredients.sort_by{|i| i.name}.each do |i| %>
+
     <div>
+
         <% if i.substitutions.present? %>
             <h3><%= link_to i.name, category_ingredient_path(@category.id, i.id) %></h3>
             <em><%= i.substitutions.size %> substitution(s) listed.</em>
+           
         <% else %>
             <h3> <%= i.name %> </h3>
             <em>No Substitutions available, why not <%= link_to "add one?", controller:"substitutions", action: "new" %></em>
+            
         <% end %>
+        <% if belongs_to_current_user(i) %>
+            <em> <%= link_to "edit", edit_category_ingredient_path(@category.id, i.id) %> </em> 
+            <em> <%= link_to "delete", category_ingredient_path(@category.id, i.id) %> </em> 
+        <% end %>
+
         <p><%= i.description %></p>
-       
+        
     </div>
     
 <% end %>
