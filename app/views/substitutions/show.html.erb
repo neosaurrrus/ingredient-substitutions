@@ -11,8 +11,8 @@
     <p><strong>Vegetarian Substitute!</strong></p>
 <%end%>
 
-<%= link_to "edit", edit_substitution_path(s) %>
+<%= link_to "edit", edit_substitution_path(@substitution) %>
         <br>
-<%= link_to "delete", substitution_path(s), method: :delete %>
+<%= link_to "delete", substitution_path(@substitution), method: :delete %>
 
 

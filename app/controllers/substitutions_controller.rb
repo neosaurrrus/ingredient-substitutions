@@ -42,7 +42,7 @@ class SubstitutionsController < ApplicationController
 
   def update
     @substitution = Substitution.find_by(id: params[:id])
-    if @attraction.update(params.require(:substitution).permit(:same_quantity,:description, :issues, :original_id, :sub_id, :user_id)) 
+    if @substitution.update(params.require(:substitution).permit(:same_quantity,:description, :issues, :original_id, :sub_id, :user_id)) 
       redirect_to @substitution, notice: "Substitution edited"
     else 
       render :edit
