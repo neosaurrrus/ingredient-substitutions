@@ -16,18 +16,18 @@ class SessionsController < ApplicationController
     else
       @user = User.find_by(username: params[:username])
       @user = @user.try(:authenticate, params[:password])
-      flash[:notice] = "Sucessfully logged in."
+
       return redirect_to(controller: 'sessions', action: 'new') unless @user
     end
 
     session[:user_id] = @user.id 
-    redirect_to user_path(@user)
+    redirect_to user_path(@user), notice: "You have sucessfully logged on"
   end
 
   def destroy
     if session[:user_id] 
       session.delete :user_id 
     end
-    redirect_to(controller: 'application', action: 'welcome')
+    redirect_to(controller: 'application', action: 'welcome', notice: "You have sucessfully logged out") 
   end
 end

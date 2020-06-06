@@ -150,3 +150,18 @@ a:hover::before {
 .error-text{
     color: var(--coralred);
 }
+
+.flash-notice{
+    text-align: center;
+    width: 33%;
+    margin: 0 auto;
+    border: 2px var(--blackish) solid;
+}
+
+.flash-alert{
+    text-align: center;
+    color: var(--darkred);
+    width: 33%;
+    margin: 0 auto;
+    border: 2px var(--coralred) solid;
+}
