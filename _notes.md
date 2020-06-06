@@ -1,17 +1,14 @@
 What is active storage?
 
+- NEw/edit forms logic - -selected?  Wait for response
 
 
 
-- NEw/edit forms logic - -selected? 
-- PArtialise the form
 
 
- 
-You must include and make use of a nested resource with the appropriate RESTful URLs.
+- Sort out ingredient edit/update
+- Edit/Delete links for Ingredients
 
-• You must include a nested new route with form that relates to the parent resource
+- Secure routes.
 
-• You must include a nested index or show route
-
-- secure routes.
+- card css width wierdness.

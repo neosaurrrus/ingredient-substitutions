@@ -1,4 +1,5 @@
 <h1><%= @category.name %> Ingredients</h1>
+<em><%=link_to "Add", new_category_ingredient_path(@category.id)%> a new ingredient</em>
 <% @category.ingredients.sort_by{|i| i.name}.each do |i| %>
     <div>
         <% if i.substitutions.present? %>
