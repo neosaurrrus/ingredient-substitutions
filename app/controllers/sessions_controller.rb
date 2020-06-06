@@ -16,8 +16,7 @@ class SessionsController < ApplicationController
     else
       @user = User.find_by(username: params[:username])
       @user = @user.try(:authenticate, params[:password])
-
-      return redirect_to(controller: 'sessions', action: 'new') unless @user
+      return redirect_to new_session_url, alert: "Incorrect username and/or password" unless @user
     end
 
     session[:user_id] = @user.id 
@@ -28,6 +27,6 @@ class SessionsController < ApplicationController
     if session[:user_id] 
       session.delete :user_id 
     end
-    redirect_to(controller: 'application', action: 'welcome', notice: "You have sucessfully logged out") 
+    redirect_to welcome_url, notice: "You have sucessfully logged out"
   end
 end

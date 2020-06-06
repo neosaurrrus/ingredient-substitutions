@@ -1,5 +1,5 @@
+<%= render 'shared/flash' %>
 <h1> Enter your SwapChef Login</h1>
-
 <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) %>
     <br>
     <%= text_field_tag 'username'%><br>
