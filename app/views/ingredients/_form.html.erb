@@ -1,8 +1,19 @@
+ <% if @ingredient.errors.any? %>
+  <div id="error_explanation">
+    <h3 class="error-text">
+      <%= pluralize(@ingredient.errors.count, "error") %>
+      prohibited your ingredient from being created:
+    </h3>
  
+    <ul>
+    <% @ingredient.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
     <%= form_for ([@category,@ingredient]) do |i| %>
-     
         <%= i.hidden_field :user_id, :value => current_user.id %>
-        
         <%= i.label :name %>
         <%= i.text_field :name %><br>
         <%= i.label :description %>

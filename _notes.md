@@ -3,11 +3,15 @@ What is active storage?
 Important:
 
 - NEw/edit forms logic - -selected?  Wait for response
-- Sort out ingredient edit/update
-- Edit/Delete links for Ingredients
+
+
+- ingredient form errors (like subs)
+
+- flash messages (do one)
 
 - Secure routes.
 
 Can do post submission:
 
-- card css width wierdness.
+- more flash messages
+- styling
