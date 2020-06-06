@@ -5,14 +5,12 @@ Important:
 - NEw/edit forms logic - -selected?  Wait for response
 
 
-- flash messages (do one)
-
 - Secure routes.
 
 - test everything!
 
 Can do post submission:
 
-- more flash messages
+- check for more flash messages
 - styling
 

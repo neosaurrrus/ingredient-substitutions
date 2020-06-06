@@ -1,5 +1,5 @@
 class SubstitutionsController < ApplicationController
-
+  before_action :get_substitution, only: [:show,:edit,:update,:destroy]
   def index
     @last_5_substitutions = Substitution.last_5
   end
@@ -36,12 +36,9 @@ class SubstitutionsController < ApplicationController
   end
 
   def edit
-    require_logged_in
-    @substitution = Substitution.find_by(id: params[:id])
   end
 
   def update
-    @substitution = Substitution.find_by(id: params[:id])
     if @substitution.update(params.require(:substitution).permit(:same_quantity,:description, :issues, :original_id, :sub_id, :user_id)) 
       redirect_to @substitution, notice: "Substitution edited"
     else 
@@ -51,11 +48,11 @@ class SubstitutionsController < ApplicationController
   end
 
   def show
-    @substitution = Substitution.find_by(id:params[:id])
+
   end
 
   def destroy
-    @substitution = Substitution.find_by(id:params[:id])
+
     @substitution.destroy
     redirect_to user_path(current_user), notice: "Substitution deleted"
   end
@@ -73,5 +70,8 @@ class SubstitutionsController < ApplicationController
     #   substitution_params.require(:ingredient_sub).permit(:name, :description, :vegan, :vegetarian, :category_id, :user_id)
     # end
 
+    def get_substitution
+      @substitution = Substitution.find_by(id: params[:id])
+    end
   
 end
