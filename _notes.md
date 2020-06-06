@@ -2,7 +2,7 @@ What is active storage?
 
 Important:
 
-- NEw/edit forms logic - -selected?  Wait for response
+- NEw/edit forms logic - -selected?  Wait for response before refactoring.
 
 
 - Secure routes.
