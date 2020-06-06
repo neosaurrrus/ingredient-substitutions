@@ -30,7 +30,7 @@ class IngredientsController < ApplicationController
 
   def update
     @ingredient.update(ingredient_params)
-    redirect_to @ingredient
+    redirect_to category_ingredients_path
   end
 
 
