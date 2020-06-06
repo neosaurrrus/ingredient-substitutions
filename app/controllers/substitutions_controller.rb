@@ -37,11 +37,11 @@ class SubstitutionsController < ApplicationController
 
   def edit
     require_logged_in
-    @attraction = Substitution.find_by(id: params[:id])
+    @substitution = Substitution.find_by(id: params[:id])
   end
 
   def update
-    @attraction = Substitution.find_by(id: params[:id])
+    @substitution = Substitution.find_by(id: params[:id])
     if @attraction.update(params.require(:substitution).permit(:same_quantity,:description, :issues, :original_id, :sub_id, :user_id)) 
       redirect_to @substitution, notice: "Substitution edited"
     else 
