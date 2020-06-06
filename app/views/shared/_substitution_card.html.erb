@@ -19,7 +19,7 @@
         <p><%= s.description %></p>
         <p><%= s.issues %></p>
     </div>
-    <% if current_user %>
+    <% if belongs_to_current_user(s) %>
     <div class="card-controls">
         <%= link_to "edit", edit_substitution_path(s) %>
         <br>

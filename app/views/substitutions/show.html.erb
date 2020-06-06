@@ -1,3 +1,4 @@
+<%= render 'shared/flash' %>
 <h1> <%= @substitution.original.name %> can be swapped for <%= @substitution.sub.name %> </h1>
 <h2> Submitted by <%= @substitution.user.username %> on <%=@substitution.created_at.to_date.strftime("%m/%d/%Y")%> </h2>
 <p><%= @substitution.description %> </p>
@@ -9,5 +10,9 @@
      <% elsif @substitution.sub.vegetarian %>
     <p><strong>Vegetarian Substitute!</strong></p>
 <%end%>
+
+<%= link_to "edit", edit_substitution_path(s) %>
+        <br>
+<%= link_to "delete", substitution_path(s), method: :delete %>
 
 
