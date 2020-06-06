@@ -1,8 +1,14 @@
 class IngredientsController < ApplicationController
   before_action :get_category, only: [:index, :new,:edit,:create,:update,:destroy]
+  before_action :get_ingredient, only: [:show,:edit,:update,:destroy]
 
   def index
   end
+
+  def show
+    binding.pry
+  end
+
 
   def new
     @ingredient = Ingredient.new(category_id: @category.id)
@@ -19,33 +25,35 @@ class IngredientsController < ApplicationController
   end
 
   def edit
-    @ingredient = Ingredient.find(params[:id])
   end
     
 
   def update
-    @ingredient = Ingredient.find(params[:id])
     @ingredient.update(ingredient_params)
     redirect_to @ingredient
   end
 
 
-
-
-  def show
-    @ingredient = Ingredient.find(params[:id])
+  def destroy
+    @ingredient.destroy
+    flash[:notice] = "Ingredient deleted."
+    redirect_to category_ingredients_path
   end
 
 
+  
+
 
   private
-
   def ingredient_params
     params.require(:ingredient).permit(:name, :description, :category_id, :vegan, :vegetarian, :user_id)
   end
 
   def get_category
     @category = Category.find_by(id: params[:category_id])
+  end
+  def get_ingredient
+    @ingredient = Ingredient.find_by(id: params[:id])
   end
 
 end

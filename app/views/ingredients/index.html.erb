@@ -15,7 +15,8 @@
         <% end %>
         <% if belongs_to_current_user(i) %>
             <em> <%= link_to "edit", edit_category_ingredient_path(@category.id, i.id) %> </em> 
-            <em> <%= link_to "delete", category_ingredient_path(@category.id, i.id) %> </em> 
+            <em> <%= link_to "delete", category_ingredient_path(@category.id, i.id), :method => :delete %> </em> 
+           
         <% end %>
 
         <p><%= i.description %></p>
