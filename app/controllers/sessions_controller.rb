@@ -16,6 +16,7 @@ class SessionsController < ApplicationController
     else
       @user = User.find_by(username: params[:username])
       @user = @user.try(:authenticate, params[:password])
+      flash[:notice] = "Sucessfully logged in."
       return redirect_to(controller: 'sessions', action: 'new') unless @user
     end
 
