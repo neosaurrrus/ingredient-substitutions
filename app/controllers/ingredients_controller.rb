@@ -17,7 +17,7 @@ class IngredientsController < ApplicationController
   def create
     @ingredient = @category.ingredients.create(ingredient_params)
     if @ingredient.save
-      redirect_to category_ingredients_path
+      redirect_to category_ingredients_path, notice: "Ingredient successfully added"
     else 
       render :new
     end
@@ -29,14 +29,13 @@ class IngredientsController < ApplicationController
 
   def update
     @ingredient.update(ingredient_params)
-    redirect_to category_ingredients_path
+    redirect_to category_ingredients_path, notice: "Ingredient successfully edited"
   end
 
 
   def destroy
     @ingredient.destroy
-    flash[:notice] = "Ingredient deleted."
-    redirect_to category_ingredients_path
+    redirect_to category_ingredients_path, notice: "Ingredient successfully deleted"
   end
 
 
