@@ -4,9 +4,6 @@ Important:
 
 - NEw/edit forms logic - -selected?  Wait for response before refactoring.
 
-
-- Secure routes.
-
 - test everything!
 
 Can do post submission:

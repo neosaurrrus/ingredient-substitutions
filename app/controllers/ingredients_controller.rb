@@ -41,8 +41,6 @@ class IngredientsController < ApplicationController
   end
 
 
-  
-
 
   private
   def ingredient_params

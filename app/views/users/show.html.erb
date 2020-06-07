@@ -2,17 +2,27 @@
 <h1><%= @user.username %>'s Profile</h1>
 <em>Joined the site <%=@user.created_at.to_date.strftime("on %m/%d/%Y")%></em>
 
+
     <% if !@user.substitutions.present? %>
         <p>No substitutions submitted.</p>
     <% else %>
         <h3><%= @user.substitutions.size %> substitutions submitted:</h3>
-    
- 
-    <div class="card-container">
-           <% @user.substitutions.each do |s| %>
-           <%= render "shared/substitution_card", s: s %>
+        <div class="card-container">
+            <% @user.substitutions.each do |s| %>
+            <%= render "shared/substitution_card", s: s %>
             <br>
-        
-        <% end %>
-    </div>
+            <% end %>
+        </div>
+    <% end %>
+
+    <% if !@user.ingredients.present? %>
+        <p>No ingredients submitted.</p>
+    <% else %>
+        <h3><%= @user.ingredients.size %> ingredients submitted:</h3>
+        <div class="card-container">
+            <% @user.ingredients.each do |i| %>
+            <%= render "shared/ingredients_card", i: i %>
+            <br>
+            <% end %>
+        </div>
     <% end %>
