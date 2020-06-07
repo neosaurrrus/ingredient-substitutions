@@ -6,8 +6,5 @@ class User < ApplicationRecord
     validates :username, length: { in: 3..20}
     has_many :substitutions
     has_many :ingredients
- 
-
-  
     has_many :authorizations
 end
