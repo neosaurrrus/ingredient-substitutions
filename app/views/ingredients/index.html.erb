@@ -3,7 +3,7 @@
 
 <div class="card-container">
     <% @category.ingredients.sort_by{|i| i.name}.each do |i| %>
-        <%= render 'shared/ingredients_card',i:i %>
+        <%= render 'shared/ingredients_card',i:i, c: @category %>
     <% end %>
 </div>
     

@@ -21,7 +21,7 @@
         <h3><%= @user.ingredients.size %> ingredients submitted:</h3>
         <div class="card-container">
             <% @user.ingredients.each do |i| %>
-            <%= render "shared/ingredients_card", i: i %>
+            <%= render "shared/ingredients_card", i: i, c: i.category %>
             <br>
             <% end %>
         </div>
