@@ -1,8 +1,17 @@
 class SubstitutionsController < ApplicationController
   before_action :get_substitution, only: [:show,:edit,:update,:destroy]
+  before_action :ownership_check, only: [:edit,:update,:destroy]
+
+
+
   def index
     @last_5_substitutions = Substitution.last_5
   end
+
+  def show
+  end
+
+  
   def new
     require_logged_in
     @substitution = Substitution.new
@@ -36,6 +45,7 @@ class SubstitutionsController < ApplicationController
   end
 
   def edit
+    check_if_belongs_to_user(@substitution)
   end
 
   def update
@@ -44,15 +54,10 @@ class SubstitutionsController < ApplicationController
     else 
       render :edit
     end
-
   end
 
-  def show
-
-  end
 
   def destroy
-
     @substitution.destroy
     redirect_to user_path(current_user), notice: "Substitution deleted"
   end
@@ -73,5 +78,11 @@ class SubstitutionsController < ApplicationController
     def get_substitution
       @substitution = Substitution.find_by(id: params[:id])
     end
+
+    def ownership_check
+      check_if_belongs_to_user(@substitution)
+    end
+
+  
   
 end

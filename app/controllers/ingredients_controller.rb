@@ -1,6 +1,7 @@
 class IngredientsController < ApplicationController
   before_action :get_category, only: [:index, :new,:edit,:create,:update,:destroy]
   before_action :get_ingredient, only: [:show,:edit,:update,:destroy]
+  before_action :ownership_check, only: [:edit,:update,:destroy]
 
   def index
   end
@@ -11,13 +12,14 @@ class IngredientsController < ApplicationController
 
 
   def new
+    require_logged_in
     @ingredient = Ingredient.new(category_id: @category.id)
   end
 
   def create
     @ingredient = @category.ingredients.create(ingredient_params)
     if @ingredient.save
-      redirect_to category_ingredients_path, notice: "Ingredient successfully added"
+      redirect_to category_ingredients_url, notice: "Ingredient successfully added"
     else 
       render :new
     end
@@ -29,13 +31,13 @@ class IngredientsController < ApplicationController
 
   def update
     @ingredient.update(ingredient_params)
-    redirect_to category_ingredients_path, notice: "Ingredient successfully edited"
+    redirect_to category_ingredients_url, notice: "Ingredient successfully edited"
   end
 
 
   def destroy
     @ingredient.destroy
-    redirect_to category_ingredients_path, notice: "Ingredient successfully deleted"
+    redirect_to category_ingredients_url, notice: "Ingredient successfully deleted"
   end
 
 
@@ -53,5 +55,11 @@ class IngredientsController < ApplicationController
   def get_ingredient
     @ingredient = Ingredient.find_by(id: params[:id])
   end
+
+  def ownership_check
+    check_if_belongs_to_user(@ingredient)
+  end
+
+ 
 
 end
