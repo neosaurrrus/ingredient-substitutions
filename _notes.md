@@ -4,10 +4,10 @@ Important:
 
 - NEw/edit forms logic - -selected?  Wait for response before refactoring.
 
-- test everything!
+
 
 Can do post submission:
+- test everything!
 
-- check for more flash messages
 - styling
 

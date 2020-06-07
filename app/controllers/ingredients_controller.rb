@@ -13,7 +13,7 @@ class IngredientsController < ApplicationController
 
   def new
     require_logged_in
-    @ingredient = Ingredient.new(category_id: @category.id)
+      @ingredient = Ingredient.new
   end
 
   def create
@@ -48,7 +48,7 @@ class IngredientsController < ApplicationController
   end
 
   def get_category
-    @category = Category.find_by(id: params[:category_id])
+     @category = Category.find_by(id: params[:category_id])
   end
   def get_ingredient
     @ingredient = Ingredient.find_by(id: params[:id])
