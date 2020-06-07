@@ -12,13 +12,14 @@
   <body>
     <nav>
       <ul>
-        <li class="logo"> <%= link_to "SwapChef", controller: "application", action: "welcome" %></li>
-        <li> <%= link_to "New Substitution", controller: "substitutions", action: "new" if current_user%></li>
+        <li class="logo"> <%= link_to "SwapChef", welcome_url %></li>
+        <li> <%= link_to "New Ingredient", new_category_ingredient_url(1) if current_user%></li>
+        <li> <%= link_to "New Substitution", new_substitution_url if current_user%></li>
         <li> <%= link_to "Logout", logout_path , method:"delete" if current_user%></li>
          <li><% if current_user %>
-                 <%= link_to current_user.username, controller: "users", action: "show", id: current_user.id %> 
+                 <%= link_to current_user.username, user_url(current_user.id) %> 
                <% else %> 
-                  <%=link_to "Signup / Login", controller: "sessions", action: "new" %>
+                  <%=link_to "Signup / Login", new_session_url %>
                <% end %>   
         </li>
       </ul>
