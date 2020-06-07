@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       if @authorization = Authorization.find_by_provider_and_uid(auth["provider"], auth["uid"])
         @user = @authorization.user
       else
-        @user = User.new(username:auth["info"]["name"], password:"rgrgagrareg")
+        @user = User.new(username:auth["info"]["name"], password:rand(100000000000...100000000000000000000).to_s)
         @user.authorizations.build :provider => auth["provider"], :uid => auth["uid"]
         @user.save
       end

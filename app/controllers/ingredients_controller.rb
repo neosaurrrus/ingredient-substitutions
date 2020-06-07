@@ -7,7 +7,6 @@ class IngredientsController < ApplicationController
   end
 
   def show
-    binding.pry
   end
 
 
@@ -28,7 +27,6 @@ class IngredientsController < ApplicationController
   def edit
   end
     
-
   def update
     @ingredient.update(ingredient_params)
     redirect_to category_ingredients_url, notice: "Ingredient successfully edited"
@@ -39,8 +37,6 @@ class IngredientsController < ApplicationController
     @ingredient.destroy
     redirect_to category_ingredients_url, notice: "Ingredient successfully deleted"
   end
-
-
 
   private
   def ingredient_params
@@ -57,7 +53,5 @@ class IngredientsController < ApplicationController
   def ownership_check
     check_if_belongs_to_user(@ingredient)
   end
-
- 
-
+  
 end
