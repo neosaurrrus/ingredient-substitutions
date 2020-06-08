@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'welcome' => 'application#welcome'
+  get '/substitutions/last_5', :to => 'substitutions#last_5'
   root 'application#welcome'
 
   resources :sessions
@@ -8,7 +9,7 @@ Rails.application.routes.draw do
   end
   
   resources :substitutions
-  get '/substitutions/last_5', :to => 'substitutions#last_5'
+  
 
   resources :users, only:[:new, :show, :create, :edit]
   delete 'logout' => 'sessions#destroy'

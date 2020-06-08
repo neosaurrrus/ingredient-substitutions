@@ -4,13 +4,13 @@ class SubstitutionsController < ApplicationController
 
   def index
   end
-  
+
   def last_5
     @last_5_substitutions = Substitution.last_5
   end
 
   def show
-
+    binding.pry
   end
 
   
