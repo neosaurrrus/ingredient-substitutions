@@ -8,10 +8,9 @@
 
 <strong><%= @ingredient.substitutions.size%> substitutions found: </strong>
 
+ <div class="card-container">
     <% @ingredient.substitutions.each do |s| %>
-    <div class="card-container">
         <%= render "shared/substitution_card", s: s %>
-    </div>
     <% end %>
-
+</div>
 <% end %>
