@@ -8,11 +8,14 @@ Rails.application.routes.draw do
   end
   
   resources :substitutions
+  get '/substitutions/last_5', :to => 'substitutions#last_5'
+
   resources :users, only:[:new, :show, :create, :edit]
   delete 'logout' => 'sessions#destroy'
 
   get '/auth/google_oauth2/callback', :to => 'sessions#create'
   get '/auth/failure', :to => 'sessions#failure_google'
+
 
 
 

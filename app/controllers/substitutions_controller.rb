@@ -3,10 +3,14 @@ class SubstitutionsController < ApplicationController
   before_action :ownership_check, only: [:edit,:update,:destroy]
 
   def index
+  end
+  
+  def last_5
     @last_5_substitutions = Substitution.last_5
   end
 
   def show
+
   end
 
   
