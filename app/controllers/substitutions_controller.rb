@@ -10,7 +10,6 @@ class SubstitutionsController < ApplicationController
   end
 
   def show
-    binding.pry
   end
 
   
@@ -26,7 +25,8 @@ class SubstitutionsController < ApplicationController
     substitution_params = params[:substitution]
 
     if !original_id # If there is a new original ingredient
-      @new_original_ingredient = Ingredient.create(substitution_params.require(:ingredient_original).permit(:name, :description, :vegan, :vegetarian, :category_id, :user_id))
+
+      @new_original_ingredient = Ingredient.create(ingredient_original_params)
       params[:substitution][:original_id] = @new_original_ingredient.id
     end
 
@@ -47,7 +47,6 @@ class SubstitutionsController < ApplicationController
   end
 
   def edit
-    
   end
 
   def update
@@ -67,9 +66,11 @@ class SubstitutionsController < ApplicationController
     # def substitution_params
     #   params.require(:substitution).permit(:same_quantity,:description, :issues, :original_id, :sub_id, :user_id)
     # end
-    # def ingredient_original_params
-    #   substitution_params.require(:ingredient_original).permit(:name, :description, :vegan, :vegetarian, :category_id, :user_id)
-    # end
+     def ingredient_original_params
+        substitution_params = params[:substitution]
+        substitution_params.require(:ingredient_original).permit(:name, :description, :vegan, :vegetarian, :category_id, :user_id)
+      end
+    
     # def ingredient_sub_params
     #   substitution_params.require(:ingredient_sub).permit(:name, :description, :vegan, :vegetarian, :category_id, :user_id)
     # end

@@ -20,10 +20,11 @@
         <p><%= s.issues %></p>
     </div>
     <% if belongs_to_current_user(s) %>
-    <div class="card-controls">
-        <%= link_to "edit", edit_substitution_path(s) %>
-        <br>
-        <%= link_to "delete", substitution_path(s), method: :delete %>
-        <% end %>
-    </div>
+        <div class="card-controls">
+            <%= link_to "edit", edit_substitution_path(s) %>
+            <br>
+            <%= link_to "delete", substitution_path(s), method: :delete %>
+        </div>
+    <% end %>
+    
 </div>

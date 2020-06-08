@@ -3,9 +3,7 @@
 <p> <%= @ingredient.description %> </p>
 
 <% if !@ingredient.substitutions.present? %>
-
-    <em>No Substitutions available, why not <%= link_to "add one?", controller:"substitutions", action: "new" %></em>
-
+    <em>No Substitutions available, why not <%= link_to "add one?", new_substitution_url %></em>
 <% else %>
 
 <strong><%= @ingredient.substitutions.size%> substitutions found: </strong>
