@@ -1,6 +1,10 @@
 module ApplicationHelper
   
     def belongs_to_current_user(instance)
-        instance.user_id == current_user.id
+        if current_user
+            instance.user_id == current_user.id
+        else 
+            false
+        end
     end
 end
