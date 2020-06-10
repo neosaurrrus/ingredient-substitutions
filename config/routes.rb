@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
   get 'welcome' => 'application#welcome'
   get '/substitutions/last_5', :to => 'substitutions#last_5'
+ 
   root 'application#welcome'
 
   resources :sessions
   resources :categories  do
     resources :ingredients
+    
   end
+  
+  get '/longest_name', :to => 'ingredients#longest_name'
   
   resources :substitutions
   

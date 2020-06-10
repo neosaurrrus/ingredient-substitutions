@@ -1,6 +1,10 @@
 class Ingredient < ApplicationRecord
      #scopes
      scope :ordered_by_name, -> { order(name: :asc) }
+     scope :longest_name, -> { order("LENGTH(name) desc").limit(1).first }
+     
+
+
      #validations
     validates :name, length: { minimum: 3}
     validates :description, length: { minimum: 10}

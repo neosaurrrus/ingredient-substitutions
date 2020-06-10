@@ -6,9 +6,14 @@ class IngredientsController < ApplicationController
   def index
   end
 
+  def longest_name
+    @ingredient = Ingredient.longest_name
+  end
+
   def show
   end
 
+  
 
   def new
     require_logged_in
