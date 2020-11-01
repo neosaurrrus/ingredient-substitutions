@@ -1,4 +1,4 @@
-Welcome to SwapChef, an app to record ingredients that can be swapped for other ingredients. Great if you don't have a certain recipe
+Welcome to li, an app to record ingredients that can be swapped for other ingredients. Great if you don't have a certain recipe
 
 Built with Rails.
 

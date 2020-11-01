@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SwapChef</title>
+    <title>SubsChef</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,900&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -12,7 +12,7 @@
   <body>
     <nav>
       <ul>
-        <li class="logo"> <%= link_to "SwapChef", welcome_url %></li>
+        <li class="logo"> <%= link_to "SubsChef", welcome_url %></li>
 
         <li> <%= link_to "View Categories", categories_url %></li>
         <li> <%= link_to "New Substitution", new_substitution_url if current_user%></li>

@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
- @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
 
  :root{
     
@@ -28,14 +28,13 @@
 }
 
 html {
-    font: normal normal lighter 18px/1.6 'Open Sans', Arial, Helvetica, sans-serif;
+    font-family: 'Playfair Display', serif;
     box-sizing: border-box;
 }
 
 body{
     
     background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
     color: var(--blackish);
     margin: 0;
     padding: 0;
@@ -48,23 +47,41 @@ body{
 
 nav{
     background-color: var(--navgrey);
-    padding: 10px;
+    padding: 20px 10%;
+    
+
 }
 
 nav ul{
     list-style: none;
     display: grid;
-    grid-template-columns: 1fr repeat(4, 200px);
+    grid-template-columns: 1fr repeat(4, 20%);
     font-size: 1.2rem;
     text-align: right;
 }
 
 .logo{
-    font-size: 2rem;
+
     text-decoration: none;
     text-align: left;
 
 }
+.welcome-container{
+    background-color: rgba(0,0,0,0.2);
+    width: 80%;
+    text-align: center;
+    padding: 30px;
+    margin: 0 auto;
+}
+.subs{
+    color: var(--coralred);
+}
+.big-title{
+    font-size: calc(50px + 1vw);
+    font-style: italic;
+    font-weight: 900;
+}
+
 
 a {
     position: relative;

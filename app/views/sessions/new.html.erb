@@ -1,9 +1,9 @@
 <%= render 'shared/flash' %>
-<h1> Enter your SwapChef Login</h1>
+<h1> Enter your SubsChef Login</h1>
 <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) %>
     <br>
     <%= text_field_tag 'username'%><br>
     <%= password_field_tag 'password'%><br>
     <%= submit_tag "Log In" %><br>
     <br>
-<em>No SwapChef account? You can <%= link_to "sign up here", controller: 'users', action: 'new'%> or login via your <%= link_to "Google account", root_url + "auth/google_oauth2"%>. Joining allows you to contribute your own substitutions and provide other chefs with your own ideas!</em>
+<em>No SubsChef account? You can <%= link_to "sign up here", controller: 'users', action: 'new'%> or login via your <%= link_to "Google account", root_url + "auth/google_oauth2"%>. Joining allows you to contribute your own substitutions and provide other chefs with your own ideas!</em>
