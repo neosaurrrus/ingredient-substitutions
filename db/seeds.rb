@@ -17,11 +17,11 @@ Category.create(name: "Meat and Dairy Substitutes", description: "Meat substitut
 Category.create(name: "Other", description: "Any other foodstuff that really doesn't seem to fit anywhere else.")
 
 
-User.create(username: "System",password_digest:"none")
-User.create(username: "Admin",password_digest:"admin")
-User.create(username: "Alice",password_digest:"alice")
-User.create(username: "Bob",password_digest:"bob")
-User.create(username: "Charlie",password_digest:"charlie")
+User.create(username: "System",password:"nonenone")
+User.create(username: "Admin",password:"adminadmin")
+User.create(username: "Alice",password:"alicealice")
+User.create(username: "Bob",password:"bobbob")
+User.create(username: "Charlie",password::"charliecharlie")
 
 # Dairy Ingredients 1
 Ingredient.create(name: "Whole Milk", description: "Pasteurized Cow's milk, with a moderate fat content", vegan: false, vegetarian: true, category_id: 1, user_id: 1)
