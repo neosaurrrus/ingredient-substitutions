@@ -1,8 +1,10 @@
 Welcome to SubsChef, an app to record ingredients that can be swapped for other ingredients. Great if you don't have a certain recipe
 
+You view the app [here](http://subschef.com)
+
 Built with Rails.
 
-## Installation
+## Installation (for local installs)
 Clone down this repo. Run bundler install to grab all the required dependancies. Run `rails db:migrate` to build the relevent databases and `rail s` to run it locally.
 
 ## Usage
