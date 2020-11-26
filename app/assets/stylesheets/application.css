@@ -132,10 +132,8 @@ a:hover::before {
     text-align: center;
     flex-direction: column;
     align-content: space-between;
-    /* background-image: url(dairy.jpg); */
-    background-color: green;
+    color: var(--blackish);
     background-size: cover;
-    padding: 15px;
     width: 40%;
     min-width: 400px;
     margin: 10px;
@@ -143,19 +141,26 @@ a:hover::before {
     transition: 0.3s;
 }
 
-.category-card h3 {
+.category-card h1 {
     text-shadow: 1px 1px #000000;
+}
+
+.category-card-info{
+    height: 100%;
+    flex-basis: content;
+    background: rgba(162, 162, 162, 0.7);
+    /* padding: 5%; */
 }
 .card-container{
  display: flex;
  flex-direction: row;
  flex-wrap: wrap;
-
 }
-.category-card-info{
+
+.card-info{
     height: 100%;
     flex-basis: content;
-    background: rgba(0,0,0,0.7);
+   
     padding: 5%;
 }
 
