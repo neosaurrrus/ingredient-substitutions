@@ -120,11 +120,43 @@ a:hover::before {
     padding: 64px;
 }
 
-.card-container{
+.category-card-container{
  display: flex;
  flex-direction: row;
  flex-wrap: wrap;
  padding: 2px 16px;
+}
+
+.category-card{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-content: space-between;
+    /* background-image: url(dairy.jpg); */
+    background-color: green;
+    background-size: cover;
+    padding: 15px;
+    width: 40%;
+    min-width: 400px;
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.category-card h3 {
+    text-shadow: 1px 1px #000000;
+}
+.card-container{
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+
+}
+.category-card-info{
+    height: 100%;
+    flex-basis: content;
+    background: rgba(0,0,0,0.7);
+    padding: 5%;
 }
 
 .card{

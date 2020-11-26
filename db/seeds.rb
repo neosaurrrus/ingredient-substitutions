@@ -7,21 +7,21 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Category.create(name: "Dairy", description: "Dairy is a type of food produced from or containing the milk of mammals. They are primarily produced from mammals such as cattle, water buffaloes, goats, sheep, camels and humans. Dairy products include food items such as yogurt, cheese and butter. Dairy products are consumed worldwide, with the exception of most of East and Southeast Asia and parts of central Africa.")
-Category.create(name: "Fruit and Vegetables", description: "Fruits and vegetables are classified from both a botanical and culinary standpoint. Botanically, fruits and vegetables are classified depending on which part of the plant they come from.A fruit develops from the flower of a plant, while the other parts of the plant are categorized as vegetables.Fruits contain seeds, while vegetables can consist of roots, stems and leaves. From a culinary perspective, fruits and vegetables are classified based on taste. Fruits generally have a sweet or tart flavor and can be used in desserts, snacks or juices. Vegetables have a more mild or savory taste and are usually eaten as part of a side dish or main course.")
-Category.create(name: "Grains, Beans and Legumes", description: "Sometimes categorized as cereals, is often the largest category in nutrition guides. Examples include wheat, rice, oats, barley, bread and pasta. An example of beans would be baked beans and soy beans, while an example of legumes would be lentils and chickpeas. Grains are a good source of starch and are often categorized with other starchy food such as potatoes.")
-Category.create(name: "Meat and Non-dairy animal products", description: "This is mostly animal flesh for human consumption. Examples include chicken, fish, turkey, pork and beef")
-Category.create(name: "Liquids", description: "Liquids are used in a wide variety of recipies though they may overlap with other categories. Examples of liquids include stock, vegetable juice, oils, and alcohol.")
-Category.create(name: "Dry Herbs and Spices", description: "Herbs are plants with savory or aromatic properties that are used for flavoring and garnishing food. A spice is a seed, fruit, root, bark, or other plant substance primarily used for flavoring, coloring or preserving food")
-Category.create(name: "Meat and Dairy Substitutes", description: "Meat substitute products may be available for foods such as pork, chicken, ground beef, sausage, bacon, fish and so on. Dairy substitutes are essentially the same, except instead for dairy products. Dairy substitute products may be available for such foods as milks and cheeses.")
-Category.create(name: "Other", description: "Any other foodstuff that really doesn't seem to fit anywhere else.")
+Category.create(name: "Dairy", description: "Dairy is a type of food produced from or containing the milk of mammals. Dairy products include food items such as yogurt, cheese and butter. Dairy products are consumed worldwide, with the exception of most of East and Southeast Asia and parts of central Africa.", image_name: 'dairy.jpg')
+Category.create(name: "Fruit and Vegetables", description: "From a culinary perspective, fruits and vegetables are classified based on taste. Fruits generally have a sweet or tart flavor and can be used in desserts, snacks or juices. Vegetables have a more mild or savory taste and are usually eaten as part of a side dish or main course.",image_name: 'fruit.jpg')
+Category.create(name: "Grains, Beans and Legumes", description: "Sometimes categorized as cereals, is often the largest category in nutrition guides. Examples include wheat, rice, oats, barley, bread and pasta. Grains are a good source of starch and are often categorized with other starchy food such as potatoes.", image_name: 'grains.jpg')
+Category.create(name: "Meat and Non-dairy animal products", description: "This is mostly animal flesh for human consumption. Examples include chicken, fish, turkey, pork and beef", image_name: 'meat.jpg')
+Category.create(name: "Liquids", description: "Liquids are used in a wide variety of recipies though they may overlap with other categories. Examples of liquids include stock, vegetable juice, oils, and alcohol.", image_name: 'liquids.jpg')
+Category.create(name: "Dry Herbs and Spices", description: "Herbs are plants with savory or aromatic properties that are used for flavoring and garnishing food. A spice is a seed, fruit, root, bark, or other plant substance primarily used for flavoring, coloring or preserving food", image_name: 'dry.jpg')
+Category.create(name: "Meat and Dairy Substitutes", description: "Meat substitute products may be available for foods such as pork, chicken, ground beef, sausage, bacon, fish and so on. Dairy substitutes are essentially the same, except instead for dairy products. Dairy substitute products may be available for such foods as milks and cheeses.", image_name: 'non-meat.jpg')
+Category.create(name: "Other", description: "Any other foodstuff that really doesn't seem to fit anywhere else.", image_name: 'other.jpg')
 
 
 User.create(username: "System",password:"nonenone")
 User.create(username: "Admin",password:"adminadmin")
 User.create(username: "Alice",password:"alicealice")
 User.create(username: "Bob",password:"bobbob")
-User.create(username: "Charlie",password::"charliecharlie")
+User.create(username: "Charlie",password:"charliecharlie")
 
 # Dairy Ingredients 1
 Ingredient.create(name: "Whole Milk", description: "Pasteurized Cow's milk, with a moderate fat content", vegan: false, vegetarian: true, category_id: 1, user_id: 1)
