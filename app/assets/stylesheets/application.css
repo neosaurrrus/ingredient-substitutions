@@ -34,7 +34,7 @@ html {
 
 body{
     
-    background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #2a2a2a, #141414); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: var(--blackish);
     margin: 0;
     padding: 0;
@@ -66,20 +66,60 @@ nav ul{
     text-align: left;
 
 }
-.welcome-container{
+.big-card{
     background-color: rgba(0,0,0,0.2);
+    background-size: cover;
     width: 80%;
     text-align: center;
-    padding: 30px;
+    
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
 }
+.big-card-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: rgba(0,0,0,0.7);
+    padding: 30px;
+    color: var(--whiteish);
+    font-size: 1.2rem;
+}
+.big-card-text h1{
+    color: var(--coralred);
+    text-shadow: 1px 1px #000000;
+}
+
+input {
+ background: rgba(0,0,0,0.5);
+ font-family: 'Playfair Display', serif;
+ border: 1px solid var(--whiteish);
+ font-size: 1.5rem;
+ color: var(--whiteish);
+ padding: 10px;
+ text-align: center;
+ margin-top: 10px;
+}
+    
+
 .subs{
     color: var(--coralred);
 }
+
+.big-title-container{
+    margin: 0 auto;
+    height: 600px;
+    display: flex;
+    align-items: center;
+}
 .big-title{
-    font-size: calc(50px + 1vw);
+        margin: 0 auto;
+    font-size: calc(70px + 1vw);
     font-style: italic;
     font-weight: 900;
+    text-shadow: 5px 5px #000000;
+    color: var(--whiteish)
 }
 
 
@@ -141,7 +181,7 @@ a:hover::before {
     transition: 0.3s;
 }
 
-.category-card h1 {
+.h1 {
     text-shadow: 1px 1px #000000;
 }
 

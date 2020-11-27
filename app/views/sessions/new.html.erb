@@ -1,8 +1,17 @@
-<h1> Enter your SubsChef Login</h1>
-<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) %>
-    <br>
-    <p>Username: <%=text_field_tag 'username'%> </p><br>
-    <p>Password: <%= password_field_tag 'password'%> </p><br>
-    <%= submit_tag "Log In" %><br>
-    <br>
-<em>No SubsChef account? You can <%= link_to "sign up here", controller: 'users', action: 'new'%> or login via your <%= link_to "Google account", root_url + "auth/google_oauth2"%>. Joining allows you to contribute your own substitutions and provide other chefs with your own ideas!</em>
+<div class="big-card" style="background-image: url(<%= image_path("grains.jpg") %>)">
+    <div ></div>
+    <div class="big-card-text">
+        <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) %>
+             <h1>Login</h1>
+            <br>
+            <p>Username<%=text_field_tag 'username'%> </p><br>
+            <p>Password<%= password_field_tag 'password'%> </p><br>
+            <%= submit_tag "Log In" %><br>
+            <br>
+          <%= link_to image_tag("google-blue.png"), root_url + "auth/google_oauth2"%>
+            
+        
+           
+        <p>No SubsChef account? </p> <p><%= link_to "Sign up", controller: 'users', action: 'new'%> </p> 
+    </div>
+</div>  

@@ -1,28 +1,41 @@
- <h1>Sign Up for a SubsChef account or login via <%= link_to "Google ", root_url + "auth/google_oauth2"%></h1>
-    <strong>Joining allows you to contribute your own substitutions and provide other chefs with your own ideas!</strong>
-   
 
-<% if @user.errors.any? %>
-  <div id="error_explanation">
-    <h3 class="error-text">
-      <%= pluralize(@user.errors.count, "error") %>
-      prohibited your account from being created:
-    </h3>
- 
-    <ul>
-    <% @user.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-    </ul>
+<div class="big-card" style="background-image: url(<%= image_path("fruit.jpg") %>)">
+    <div ></div>
+    
+<div class="big-card-text">
+  <h1>Sign Up</h1>
+      <p>Joining allows you to contribute your own ideas!</p>
+    <br>
+
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h3 class="error-text">
+        <%= pluralize(@user.errors.count, "error") %>
+        prohibited your account from being created:
+      </h3>
+  
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+      <%= form_for @user do |f| %>
+        <p>Username <%= f.text_field :username, required: true%></p>
+        <p>Password <%= f.password_field :password, required: true %></p>
+        <p>Confirm Password <%= f.password_field :password_confirmation, required: true %></p>
+        
+        <%= f.submit "Join Us!" %>
+      <% end %>
+      <br>
+       <%= link_to image_tag("google-blue.png"), root_url + "auth/google_oauth2"%>
   </div>
-<% end %>
+</div>  
 
-    <%= form_for @user do |f| %>
-      <p>Username: <%= f.text_field :username, required: true%></p>
-      <p>Password: <%= f.password_field :password, required: true %></p>
-      <p>Confirm Password: <%= f.password_field :password_confirmation, required: true %></p>
-      
-      <%= f.submit "Create User" %>
-    <% end %>
+
+
+
 
 
