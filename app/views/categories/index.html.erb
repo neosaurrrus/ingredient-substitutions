@@ -6,7 +6,7 @@
 
 
 <% @categories.each do |category| %>
-    <div class="category-card" style="background-image: url('../assets/<%= category.image_name %>')">
+    <div class="category-card" style="background-image: url(<%= image_path(category.image_name) %>)">
                 <div class="category-card-info">
                 <h1><%= link_to category.name, category_ingredients_path(category) %></h1>
                 <p><%= category.description %></p>
