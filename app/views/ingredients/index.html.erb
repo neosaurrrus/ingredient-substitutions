@@ -1,5 +1,5 @@
-<h1><%= @category.name %> Ingredients</h1>
-<h4><%=link_to "Add", new_category_ingredient_path(@category.id)%> a new ingredient</h4>
+<h1><em><%= @category.name %> Ingredients</em></h1>
+<h2><%=link_to "Add", new_category_ingredient_path(@category.id)%> a new ingredient</h2>
 
 <div class="card-container">
     <% @category.ingredients.sort_by{|i| i.name}.each do |i| %>

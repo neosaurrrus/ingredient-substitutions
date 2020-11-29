@@ -13,7 +13,7 @@
   <body>
     <nav>
       <ul>
-        <li class="logo"> <%= link_to "SubsChef", welcome_url %></li>
+        <li class="logo"> <em><%= link_to "SubsChef", welcome_url %></em></li>
         <li> <%= link_to "New Substitution", new_substitution_url if current_user%></li>
         <li> <%= link_to "View Categories", categories_url %></li>
         <li> <%= link_to "Logout", logout_url , method:"delete" if current_user%></li>

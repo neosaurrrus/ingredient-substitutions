@@ -2,7 +2,7 @@
     <div ></div>
     <div class="big-card-text">
         <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) %>
-             <h1>Login</h1>
+             <h1><em>Login</em></h1>
             <br>
             <p>Username<%=text_field_tag 'username'%> </p><br>
             <p>Password<%= password_field_tag 'password'%> </p><br>
@@ -12,6 +12,6 @@
             
         
            
-        <p>No SubsChef account? </p> <p><%= link_to "Sign up", controller: 'users', action: 'new'%> </p> 
+        <p>No SubsChef account? </p> <p><em><%= link_to "Sign up", controller: 'users', action: 'new'%></em> </p> 
     </div>
 </div>  
