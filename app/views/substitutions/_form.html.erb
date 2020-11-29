@@ -17,7 +17,7 @@
   <div class="sub-form">
        <div class="form-section substitution">
             <h2>What are you replacing?</h2>
-            <%= s.collection_select :original_id, Ingredient.ordered_by_name, :id, :name , :prompt => 'Select or add new Ingredient below' %><br>
+            <%= s.collection_select :original_id, Ingredient.ordered_by_name, :id, :name , :prompt => 'Select Ingredient' %><br>
 
                 <h4> Or add a new ingredient:</h4>
               
@@ -25,7 +25,7 @@
                         <%= i.hidden_field :user_id, :value => current_user.id %>
                         <div class="form-element">
                             <label>Category</label><br>
-                           <%= i.collection_select :category_id, Category.ordered_by_name, :id, :name, :prompt => 'Select or add a new Category' %>
+                           <%= i.collection_select :category_id, Category.ordered_by_name, :id, :name, :prompt => 'Select Category' %>
                         </div>
                         <div class="form-element">
                           <%= i.label :name %><br>
@@ -50,15 +50,15 @@
 
            <div class="form-section substitution">
         
-            <h2>What with?</h2>
-            <%= s.collection_select :sub_id, Ingredient.ordered_by_name, :id, :name, :prompt => 'Select or add new Ingredient below'%><br>
+            <h2>What are you replacing it with?</h2>
+            <%= s.collection_select :sub_id, Ingredient.ordered_by_name, :id, :name, :prompt => 'Select Ingredient'%><br>
                  <h4> Or add an ingredient:</h4>
                 
                  <%= s.fields_for :ingredient_sub do |i| %>
                            <%= i.hidden_field :user_id, :value => current_user.id %>
                            <div class="form-element">
                               <label>Category</label><br>
-                           <%= i.collection_select :category_id, Category.ordered_by_name, :id, :name, :prompt => 'Select or add a new Category' %>
+                           <%= i.collection_select :category_id, Category.ordered_by_name, :id, :name, :prompt => 'Select Category' %>
                          </div>
                          <div class="form-element">
                           <%= i.label :name %><br>

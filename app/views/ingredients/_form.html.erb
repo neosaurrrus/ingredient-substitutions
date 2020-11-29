@@ -14,6 +14,7 @@
 <% end %>
 
 
+  <div class="form-section substitution">
   <%= form_for ([@category,@ingredient]) do |i| %>
         <%= i.hidden_field :user_id, :value => current_user.id %>
         <%= i.label :name %>
@@ -26,3 +27,4 @@
         <%= i.check_box :vegetarian %>
         <%= i.submit %>
     <% end %>
+  </div>

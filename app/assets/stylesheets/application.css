@@ -16,7 +16,6 @@
 
 
  :root{
-    
     --whiteish: hsl(0, 0%, 89%);
     --lightgrey: hsla(0, 0%, 81%, 1);
     --darkgrey: hsla(240, 1%, 66%, 1);
@@ -34,7 +33,6 @@ html {
 }
 
 body{
-    
     background: linear-gradient(to right, #4a4a4a, #555555); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: var(--whiteish);
     margin: 0;
@@ -50,8 +48,6 @@ nav{
     background-color: rgba(0,0,0,0.5);
     height: 5vh;
     width: 100vw;
-    
-   
 }
 
 nav ul{
@@ -68,7 +64,6 @@ nav ul{
 }
 
 .logo{
-
     text-decoration: none;
     color: var(--whiteish);
 }
@@ -106,8 +101,12 @@ input,select{
  text-align: center;
  margin-top: 10px;
  width: 80%;
+ min-width: 50px;
 }
-    
+input[type='checkbox'] { 
+    height: 25px; 
+    background: black;
+}
 
 .subs{
     color: var(--coralred);
@@ -175,7 +174,6 @@ a:hover::before {
  display: flex;
  flex-direction: row;
  flex-wrap: wrap;
- 
  justify-content: center;
  gap: 50px;
 
@@ -211,12 +209,10 @@ label {
     text-align: center;
     max-height: 70vh;
     width: 100%;
-
-    
     display: grid;
     grid-template-columns: 10fr 10fr;
     grid-template-rows: 2fr 1fr;
-  gap: 30px 30px;
+    gap: 30px 30px;
     grid-template-areas:
     "top top"
     "other other";
