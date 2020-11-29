@@ -275,8 +275,8 @@ label {
     display: flex;
     flex-direction: column;
     align-content: space-between;
-    color: var(--blackish);
-    background-color: var(--lightgrey);
+    color: var(--whiteish);
+    background-color: rgba(0,0,0,0.5);
     padding: 15px;
     width: 400px;
     margin: 10px;
