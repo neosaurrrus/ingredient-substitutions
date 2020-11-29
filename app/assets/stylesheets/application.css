@@ -30,12 +30,13 @@
 html {
     font-family: 'Playfair Display', serif;
     box-sizing: border-box;
+    font-size: 18px;
 }
 
 body{
     
-    background: linear-gradient(to right, #2a2a2a, #141414); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    color: var(--blackish);
+    background: linear-gradient(to right, #4a4a4a, #555555); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: var(--whiteish);
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -48,21 +49,28 @@ body{
 nav{
     background-color: rgba(0,0,0,0.5);
     height: 5vh;
+    width: 100vw;
+    
+   
 }
 
 nav ul{
+    width: 100%;
+    height: 100%;
     list-style: none;
     display: grid;
-    grid-template-columns: 1fr repeat(4, 20%);
-    font-size: 1.2rem;
-    text-align: right;
+    grid-template-columns: 1fr 2fr 2fr 1fr 1fr;
+    grid-gap: 2rem;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto
+
 }
 
 .logo{
 
     text-decoration: none;
-    text-align: left;
-
+    color: var(--whiteish);
 }
 .big-card{
     background-color: rgba(0,0,0,0.2);
@@ -88,11 +96,11 @@ nav ul{
     text-shadow: 1px 1px #000000;
 }
 
-input {
+input,select{
  background: rgba(0,0,0,0.5);
  font-family: 'Playfair Display', serif;
  border: 1px solid var(--whiteish);
- font-size: 1.5rem;
+ font-size: 1.1rem;
  color: var(--whiteish);
  padding: 10px;
  text-align: center;
@@ -163,7 +171,8 @@ a:hover::before {
  display: flex;
  flex-direction: row;
  flex-wrap: wrap;
- padding: 2px 16px;
+ justify-content: center;
+
 }
 
 .category-card{
@@ -171,7 +180,7 @@ a:hover::before {
     text-align: center;
     flex-direction: column;
     align-content: space-between;
-    color: var(--blackish);
+   
     background-size: cover;
     width: 40%;
     min-width: 400px;
@@ -180,14 +189,19 @@ a:hover::before {
     transition: 0.3s;
 }
 
+.category-card a {
+    
+    background: rgba(0,0,0,0.5);
+}
 h1 h2{
     text-shadow: 1px 1px #000000;
 }
 
 .category-card-info{
+    color: var(--whiteish);
     height: 100%;
     flex-basis: content;
-    background: rgba(162, 162, 162, 0.7);
+    background: rgba(0, 0, 0, 0.5);
     /* padding: 5%; */
 }
 .card-container{
@@ -202,17 +216,27 @@ h1 h2{
    
     padding: 5%;
 }
+.v-icon {
+    color: green;
+    height: 50px;
+
+}
+.v-icon img{
+    max-width: 20px;
+}
 
 .card{
     display: flex;
     flex-direction: column;
     align-content: space-between;
-    background-color: var(--navgrey);
+    color: var(--blackish);
+    background-color: var(--lightgrey);
     padding: 15px;
     width: 400px;
     margin: 10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
+    
 }
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
