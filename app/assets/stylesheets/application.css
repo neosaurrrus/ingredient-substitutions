@@ -46,10 +46,8 @@ body{
 }
 
 nav{
-    background-color: var(--navgrey);
-    padding: 20px 10%;
-    
-
+    background-color: rgba(0,0,0,0.5);
+    height: 5vh;
 }
 
 nav ul{
@@ -71,7 +69,6 @@ nav ul{
     background-size: cover;
     width: 80%;
     text-align: center;
-    
     margin: 0 auto;
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -109,19 +106,21 @@ input {
 
 .big-title-container{
     margin: 0 auto;
-    height: 600px;
+    height: 80vh;
     display: flex;
     align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--whiteish);
 }
 .big-title{
-        margin: 0 auto;
+    margin: 0 auto;
     font-size: calc(70px + 1vw);
     font-style: italic;
     font-weight: 900;
     text-shadow: 5px 5px #000000;
     color: var(--whiteish)
 }
-
 
 a {
     position: relative;
@@ -181,7 +180,7 @@ a:hover::before {
     transition: 0.3s;
 }
 
-.h1 {
+h1 h2{
     text-shadow: 1px 1px #000000;
 }
 

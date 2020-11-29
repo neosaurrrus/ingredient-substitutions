@@ -1,18 +1,20 @@
 <div class="big-card" style="background-image: url(<%= image_path("dry.jpg") %>)">
-<div class="big-title-container">
-    <h1 class="big-title"> <span class="subs">Subs</span>Chef</h1>
-</div>
-<div class="big-card-text">
 
-    <%= render "shared/flash" %>
-    
-    <div class="subtitle"><h2>When you want to cook without having having every darned ingredient!<h2> </div>
+    <div class="big-title-container">
+        <h1 class="big-title"> <span class="subs">Subs</span>Chef</h1>
+    </div>
+    <div class="big-card-text">
 
-    <h2> <%= link_to "Browse Food categories", categories_path %></h2>
-    <h2> <%= link_to "Latest 5 Substitutions", substitutions_last_5_path %></h2>
+        <%= render "shared/flash" %>
+        
+
+    <h2 class="subtitle">When you want to cook without having having every darned ingredient!<h2> 
+
+        <h2> <%= link_to "Browse Food categories", categories_path %></h2>
+        <h2> <%= link_to "Latest 5 Substitutions", substitutions_last_5_path %></h2>
 
 
-    <div> <%= link_to "New Substitution", controller: "substitutions", action: "new" if current_user%></div>
-</div>
+        <div> <%= link_to "New Substitution", controller: "substitutions", action: "new" if current_user%></div>
+    </div>
 
 </div>  
