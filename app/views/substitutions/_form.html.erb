@@ -14,60 +14,89 @@
 <% end %>
 
     <%= form_for @substitution do |s| %>
-
-       <div class="form-section">
-            <h2>Existing Original Ingredient</h2>
-            <em>What are you swapping out?</em>
+  <div class="sub-form">
+       <div class="form-section substitution">
+            <h2>What are you replacing?</h2>
             <%= s.collection_select :original_id, Ingredient.ordered_by_name, :id, :name , :prompt => 'Select or add new Ingredient below' %><br>
 
-                <h4> New original ingredient</h4>
-                <strong>Ingredient:</strong>
+                <h4> Or add a new ingredient:</h4>
+              
                  <%= s.fields_for :ingredient_original do |i| %>
                         <%= i.hidden_field :user_id, :value => current_user.id %>
-                        <%= i.label :name %>
-                        <%= i.text_field :name %>
-                        <%= i.label :description %>
-                        <%= i.text_field :description %>
-                        <%= i.label :vegan %>
-                        <%= i.check_box :vegan %>
-                        <%= i.label :vegetarian %>
-                        <%= i.check_box :vegetarian %>
-                        <%= i.collection_select :category_id, Category.ordered_by_name, :id, :name, :prompt => 'Select or add a new Category' %>
-                 <% end %>
-       </div>
-                
+                        <div class="form-element">
+                            <label>Category</label><br>
+                           <%= i.collection_select :category_id, Category.ordered_by_name, :id, :name, :prompt => 'Select or add a new Category' %>
+                        </div>
+                        <div class="form-element">
+                          <%= i.label :name %><br>
+                          <%= i.text_field :name %>
+                        </div>
+                        <div class="form-element">
+                          <%= i.label :description %><br>
+                          <%= i.text_field :description %>
+                        </div>
+                        <div class="form-element">
+                          <%= i.label :vegan %><br>
+                          <%= i.check_box :vegan %>
+                        
+                          <%= i.label :vegetarian %><br>
+                          <%= i.check_box :vegetarian %>
+                        </div>
 
-           <div class="form-section">
-            <h2>Substitution Ingredient</h2>
-            <em>What are you swapping in?</em>
+                      <% end %>
+       </div>
+
+  
+
+           <div class="form-section substitution">
+        
+            <h2>What with?</h2>
             <%= s.collection_select :sub_id, Ingredient.ordered_by_name, :id, :name, :prompt => 'Select or add new Ingredient below'%><br>
-                 <h4> New substitution ingredient</h4>
-                <strong>Ingredient:</strong>
+                 <h4> Or add an ingredient:</h4>
+                
                  <%= s.fields_for :ingredient_sub do |i| %>
                            <%= i.hidden_field :user_id, :value => current_user.id %>
-                        <%= i.label :name %>
-                        <%= i.text_field :name %>
-                        <%= i.label :description%>
-                        <%= i.text_field :description%>
-                        <%= i.label :vegan %>
+                           <div class="form-element">
+                              <label>Category</label><br>
+                           <%= i.collection_select :category_id, Category.ordered_by_name, :id, :name, :prompt => 'Select or add a new Category' %>
+                         </div>
+                         <div class="form-element">
+                          <%= i.label :name %><br>
+                          <%= i.text_field :name %>
+                        </div>
+                        <div class="form-element">
+                          <%= i.label :description%><br>
+                          <%= i.text_field :description%>
+                        </div>
+                        <div class="form-element">
+                        <%= i.label :vegan %><br>
                         <%= i.check_box :vegan %>
-                        <%= i.label :vegetarian %>
+                        <%= i.label :vegetarian %><br>
                         <%= i.check_box :vegetarian %>
-                        <%= i.collection_select :category_id, Category.ordered_by_name, :id, :name, :prompt => 'Select or add a new Category' %>
-                 <% end %><br>
+                         </div>
+                             <% end %><br>
        </div>
-
-        <div class="form-section">  
-              <h2>Other Details</h2>
+       
+        <div class="form-section other substitution">  
+              <div class="form-element">
               <%= s.hidden_field :user_id, :value => current_user.id %>
               <%= s.label :same_quantity, "Should you use a 1:1 ratio?"%>
-              <%= s.check_box :same_quantity %><br>
+              <%= s.check_box :same_quantity %>
+              </div>
+              <div class="form-element">
               <%= s.label :description, "Provide futher details in how you would use the substitution" %><br>
-              <%= s.text_field :description %><br>
+              <%= s.text_field :description %>
+              </div>
+               <div class="form-element">
               <%= s.label :issues, "Any issues to consider?" %><br>
-              <%= s.text_field :issues %><br>
+              <%= s.text_field :issues %>
+              </div>
+               <div class="form-element">
               <%= s.submit "Submit Substitution" %>
+              </div>
        </div>
-
+   
+      
+    </div>
     <% end %>
 
